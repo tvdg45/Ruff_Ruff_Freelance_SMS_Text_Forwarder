@@ -35,7 +35,7 @@
                     <manifest>
 
                     <!-- give full qualified name of your main class-->
-                      <mainClass>Example</mainClass>
+                      <!--<mainClass>Example</mainClass>-->
 
                     </manifest>
                   </archive>
