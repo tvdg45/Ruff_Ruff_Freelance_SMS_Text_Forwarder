@@ -23,7 +23,7 @@
     <!-- Additional lines to be added here... -->
 
     <!-- (you don't need this if you are using a .RELEASE version) -->
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>spring-snapshots</id>
             <url>http://repo.spring.io/snapshot</url>
@@ -43,5 +43,5 @@
             <id>spring-milestones</id>
             <url>http://repo.spring.io/milestone</url>
         </pluginRepository>
-    </pluginRepositories>
+    </pluginRepositories>-->
 </project>
