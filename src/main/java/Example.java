@@ -9,15 +9,13 @@ import org.springframework.web.bind.annotation.*;
 public class Example {
 
 	@RequestMapping(method = RequestMethod.GET)
-    String home(@RequestParam(value = "person", defaultValue = "") String personName) {
-        return "<h1>Hello " + personName + "!</h1>" ;
+    String home(
+		@RequestParam(value = "person", defaultValue = "") String personName,
+		@RequestParam(value = "age", defaultValue = "") String age) {
+			   ) {
+        return "<h1>Hello " + personName + "! You are " + age + ".</h1>" ;
     }
 	
-	@RequestMapping(method = RequestMethod.POST)
-    String thisone(@RequestParam(value = "thing", defaultValue = "") String thisthing) {
-        return "<h1>It is " + thisthing + "!</h1>" ;
-    }
-
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Example.class, args);
     }
