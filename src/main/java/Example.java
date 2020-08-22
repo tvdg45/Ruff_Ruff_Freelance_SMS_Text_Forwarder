@@ -13,7 +13,7 @@ public class Example {
         return "<h1>Hello " + personName + "!</h1>" ;
     }
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
     String thisone(@RequestParam(value = "thing", defaultValue = "") String thisthing) {
         return "<h1>It is " + thisthing + "!</h1>" ;
     }
