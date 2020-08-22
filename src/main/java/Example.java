@@ -11,7 +11,7 @@ public class Example {
 	@RequestMapping(method = RequestMethod.GET)
     String home(
 		@RequestParam(value = "person", defaultValue = "") String personName,
-		@RequestParam(value = "age", defaultValue = "") String age
+		@RequestParam(value = "age", defaultValue = "") int age
 			   ) {
         return "<h1>Hello " + personName + "! You are " + age + ".</h1>" ;
     }
