@@ -14,7 +14,7 @@ public class Example {
     }
 	
 	@RequestMapping(method = RequestMethod.GET)
-    String home(@RequestParam(value = "thing", defaultValue = "") String thisthing) {
+    String thisone(@RequestParam(value = "thing", defaultValue = "") String thisthing) {
         return "<h1>It is " + thisthing + "!</h1>" ;
     }
 
