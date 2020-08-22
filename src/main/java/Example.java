@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @EnableAutoConfiguration
+@RequestMapping("/")
 public class Example {
 
-    @RequestMapping("/it")
+	@RequestMapping("/home")
     String home() {
         return "<h1>Hello World!</h1>";
     }
