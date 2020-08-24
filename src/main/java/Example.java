@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class Example {
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
     String home(
 		@RequestParam(value = "person", defaultValue = "") String personName,
 		@RequestParam(value = "age", defaultValue = "") int age
