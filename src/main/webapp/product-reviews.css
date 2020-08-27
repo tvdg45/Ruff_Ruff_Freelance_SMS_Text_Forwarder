@@ -1,0 +1,21 @@
+@media only screen and (min-width: 2001px) {
+    
+    .header_mobile_format { display: none; }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 2000px) {
+    
+    .header_mobile_format { display: none; }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    
+    .header_pc_format { display: none; }
+}
+
+@media only screen and (max-width: 500px) {
+    
+    .header_pc_format { display: none; }
+}
+
+.star { color: gold; }

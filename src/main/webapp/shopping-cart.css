@@ -1,0 +1,29 @@
+@media only screen and (min-width: 2001px) {
+    
+    .results_per_page { margin-left: 1%; width: auto; }
+    .body_mobile_format { display: none; }
+    .shopping_cart_image { width: 50%; }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 2000px) {
+    
+    .results_per_page { margin-left: 1%; width: auto; }
+    .body_mobile_format { display: none; }
+    .shopping_cart_image { width: 50%; }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+    
+    .results_per_page { width: 100%; }
+    .body_pc_format { display: none; }
+    .shopping_cart_image { width: 100%; }
+}
+
+@media only screen and (max-width: 500px) {
+    
+    .results_per_page { width: 100%; }
+    .body_pc_format { display: none; }
+    .shopping_cart_image { width: 100%; }
+}
+
+.shopping_cart_image { max-width: 100%; }
