@@ -14,90 +14,61 @@ import java.sql.Connection;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
 
-public class Admin_Add_Item_For_Sale extends HttpServlet {
-    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
-    }
-    
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-    * Handles the HTTP <code>GET</code> method.
-    *
-    * @param request servlet request
-    * @param response servlet response
-    * @throws ServletException if a servlet-specific error occurs
-    * @throws IOException if an I/O error occurs
-    */
-    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        //processRequest(request, response);
+@CrossOrigin(origins = "https://www.timothysdigitalsolutions.com", maxAge = 3600)
+@RestController
+@EnableAutoConfiguration
+@RequestMapping("/admin-add-item-for-sale")
+public class Admin_Add_Item_For_Sale {
 
-    }
-
-    /**
-    * Handles the HTTP <code>POST</code> method.
-    *
-    * @param request servlet request
-    * @param response servlet response
-    * @throws ServletException if a servlet-specific error occurs
-    * @throws IOException if an I/O error occurs
-    */
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        processRequest(request, response);
-  
-        response.addHeader("Access-Control-Allow-Origin", "https://tdscloud-dev-ed--c.visualforce.com");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-  
-        PrintWriter out = response.getWriter();
-  
-        Connection use_open_connection;
-  
-        use_open_connection = Config.openConnection();
+	@RequestMapping(method = RequestMethod.POST)
+    String home(
+		@RequestParam(value = "item", defaultValue = "") String item,
+		@RequestParam(value = "thumbnail", defaultValue = "") String thumbnail,
+		@RequestParam(value = "category", defaultValue = "") String category,
+		@RequestParam(value = "description", defaultValue = "") String description,
+		@RequestParam(value = "price", defaultValue = "") String price,
+		@RequestParam(value = "inventory", defaultValue = "") String inventory,
+		@RequestParam(value = "date_received", defaultValue = "") String date_received,
+		@RequestParam(value = "time_received", defaultValue = "") String time_received,
+		@RequestParam(value = "add_item_for_sale", defaultValue = "") String add_item_for_sale
+			   ) {
+		
+		Connection use_open_connection;
+		
+		use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
           
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
-        
-        if (String.valueOf(request.getParameter("add_item_for_sale")).equals("Add item")) {
-            
-            Control_Change_For_Sale_Items.use_connection = use_open_connection;
-            Control_Change_For_Sale_Items.item = String.valueOf(request.getParameter("item"));
-            Control_Change_For_Sale_Items.thumbnail = String.valueOf(request.getParameter("thumbnail"));
-            Control_Change_For_Sale_Items.category = String.valueOf(request.getParameter("category")).split(",");
-            Control_Change_For_Sale_Items.description = String.valueOf(request.getParameter("description"));
-            Control_Change_For_Sale_Items.price = String.valueOf(request.getParameter("price"));
-            Control_Change_For_Sale_Items.inventory = String.valueOf(request.getParameter("inventory"));
-            Control_Change_For_Sale_Items.date_received = String.valueOf(localDate);
-            Control_Change_For_Sale_Items.time_received = String.valueOf(time_format.format(localTime));
-            Control_Change_For_Sale_Items.add_item_for_sale = String.valueOf(request.getParameter("add_item_for_sale"));
-            
-            out.println(Control_Change_For_Sale_Items.control_add_item_for_sale());
-        }
+		
+		Control_Change_For_Sale_Items.use_connection = use_open_connection;
+		Control_Change_For_Sale_Items.item = item;
+		Control_Change_For_Sale_Items.thumbnail = thumbnail;
+		Control_Change_For_Sale_Items.category = category.split(",");
+		Control_Change_For_Sale_Items.description = description;
+		Control_Change_For_Sale_Items.price = price;
+		Control_Change_For_Sale_Items.inventory = inventory;
+		Control_Change_For_Sale_Items.date_received = String.valueOf(localDate);
+		Control_Change_For_Sale_Items.time_received = String.valueOf(time_format.format(localTime));
+		Control_Change_For_Sale_Items.add_item_for_sale = add_item_for_sale;
+		
+		if (add_item_for_sale.equals("Add item")) {
+			
+			return Control_Change_For_Sale_Items.control_add_item_for_sale();
+		} else {
+			
+			return "";
+		}
+	}
+	
+    public static void main(String[] args) throws Exception {
+		
+        SpringApplication.run(Admin_Add_Item_For_Sale.class, args);
     }
-
-    /**
-    * Returns a short description of the servlet.
-    *
-    * @return a String containing servlet description
-    */
-    
-    @Override
-    public String getServletInfo() {
-
-        return "Short description";
-    } // </editor-fold>
 }
