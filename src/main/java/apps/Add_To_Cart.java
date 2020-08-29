@@ -39,20 +39,36 @@ public class Add_To_Cart {
 		@RequestParam(value = "add_to_cart", defaultValue = "") String add_to_cart
 			   ) {
 		
-		/*Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-            Control_Change_Shopping_Cart_Items.item = String.valueOf(request.getParameter("item"));
-            Control_Change_Shopping_Cart_Items.thumbnail = String.valueOf(request.getParameter("thumbnail"));
-            Control_Change_Shopping_Cart_Items.category = String.valueOf(request.getParameter("category"));
-            Control_Change_Shopping_Cart_Items.description = String.valueOf(request.getParameter("description"));
-            Control_Change_Shopping_Cart_Items.price = String.valueOf(request.getParameter("price"));
-            Control_Change_Shopping_Cart_Items.quantity = String.valueOf(request.getParameter("quantity")).split(",");
-            Control_Change_Shopping_Cart_Items.raw_time_received = String.valueOf(request.getParameter("raw_time_received"));
-            Control_Change_Shopping_Cart_Items.guest_session = String.valueOf(request.getParameter("guest_session"));
-            Control_Change_Shopping_Cart_Items.item_id = String.valueOf(request.getParameter("item_id")).split(",");
-            Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
-            Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
-            Control_Change_Shopping_Cart_Items.add_to_cart = String.valueOf(request.getParameter("add_to_cart"));*/
-        return Control_Change_Shopping_Cart_Items.control_add_to_cart();
+		Connection use_open_connection;
+		
+		use_open_connection = Config.openConnection();
+        
+        DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
+          
+        LocalDate localDate = LocalDate.now();
+        LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
+		
+		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
+		Control_Change_Shopping_Cart_Items.item = item;
+		Control_Change_Shopping_Cart_Items.thumbnail = thumbnail;
+		Control_Change_Shopping_Cart_Items.category = category;
+		Control_Change_Shopping_Cart_Items.description = description;
+		Control_Change_Shopping_Cart_Items.price = price;
+		Control_Change_Shopping_Cart_Items.quantity = quantity.split(",");
+		Control_Change_Shopping_Cart_Items.raw_time_received = raw_time_received;
+		Control_Change_Shopping_Cart_Items.guest_session = guest_session;
+		Control_Change_Shopping_Cart_Items.item_id = item_id.split(",");
+		Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
+		Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
+		Control_Change_Shopping_Cart_Items.add_to_cart = add_to_cart;
+		
+		if (add_to_cart.equals("Add to cart")) {
+			
+			return Control_Change_Shopping_Cart_Items.control_add_to_cart();
+		} else {
+			
+			return "";
+		}
     }
 	
     public static void main(String[] args) throws Exception {
