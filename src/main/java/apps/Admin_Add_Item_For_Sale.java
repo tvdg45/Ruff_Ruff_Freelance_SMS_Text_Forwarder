@@ -33,8 +33,6 @@ public class Admin_Add_Item_For_Sale {
 		@RequestParam(value = "description", defaultValue = "") String description,
 		@RequestParam(value = "price", defaultValue = "") String price,
 		@RequestParam(value = "inventory", defaultValue = "") String inventory,
-		@RequestParam(value = "date_received", defaultValue = "") String date_received,
-		@RequestParam(value = "time_received", defaultValue = "") String time_received,
 		@RequestParam(value = "add_item_for_sale", defaultValue = "") String add_item_for_sale
 			   ) {
 		
