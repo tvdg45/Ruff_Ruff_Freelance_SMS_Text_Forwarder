@@ -19,7 +19,7 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://www.timothysdigitalsolutions.com", maxAge = 3600)
+@CrossOrigin(origins = "https://tdscloud-dev-ed--c.visualforce.com", maxAge = 3600)
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/admin-add-item-for-sale")
