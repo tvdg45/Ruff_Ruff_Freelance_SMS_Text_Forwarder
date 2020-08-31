@@ -24,7 +24,7 @@ public class Admin_Extract_Receipts {
 		
 		Connection use_open_connection;
 		
-		use_open_connection = Config.openConnection();
+		use_open_connection = configuration.Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
 		
