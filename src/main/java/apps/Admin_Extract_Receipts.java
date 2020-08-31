@@ -1,6 +1,7 @@
 //Author: Timothy van der Graaff
 package apps;
 
+import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
 import java.io.IOException;
@@ -24,7 +25,7 @@ public class Admin_Extract_Receipts {
 		
 		Connection use_open_connection;
 		
-		use_open_connection = configuration.Config.openConnection();
+		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
 		
