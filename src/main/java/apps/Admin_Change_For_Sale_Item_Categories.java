@@ -1,6 +1,7 @@
 //Author: Timothy van der Graaff
 package apps;
 
+import configuration.Config;
 import controllers.Control_Change_For_Sale_Items;
 
 import java.time.LocalDate;
@@ -37,7 +38,7 @@ public class Admin_Change_For_Sale_Item_Categories {
 		
         Connection use_open_connection;
         
-        use_open_connection = configuration.Config.openConnection();
+        use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
           
