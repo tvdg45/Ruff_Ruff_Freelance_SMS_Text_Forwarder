@@ -1,6 +1,7 @@
 //Author: Timothy van der Graaff
 package apps;
 
+import configuration.Config;
 import controllers.Control_Search_For_Sale_Items;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,7 +31,7 @@ public class Admin_For_Sale_Items_Interface {
 		
 		Connection use_open_connection;
 		
-		use_open_connection = configuration.Config.openConnection();
+		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
 		Control_Change_Shopping_Cart_Items.category = category;
