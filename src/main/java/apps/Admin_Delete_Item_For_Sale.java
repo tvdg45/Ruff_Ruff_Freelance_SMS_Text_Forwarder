@@ -28,6 +28,8 @@ public class Admin_Delete_Item_For_Sale {
 		
 		Connection use_open_connection;
 		
+		try {
+			
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_For_Sale_Items.use_connection = use_open_connection;
@@ -38,6 +40,10 @@ public class Admin_Delete_Item_For_Sale {
 			
 			return Control_Change_For_Sale_Items.control_delete_item_for_sale();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
