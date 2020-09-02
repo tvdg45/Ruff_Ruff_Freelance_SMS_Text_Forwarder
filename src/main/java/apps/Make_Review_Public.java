@@ -5,7 +5,7 @@ import configuration.Config;
 import controllers.Control_Change_Reviews;
 import utilities.Security_Code_Generator;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -57,7 +57,7 @@ public class Make_Review_Public {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Make_Review_Public.class, args);
     } 
