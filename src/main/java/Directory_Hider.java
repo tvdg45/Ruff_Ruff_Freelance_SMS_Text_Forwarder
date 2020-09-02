@@ -7,18 +7,16 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/")
-public class Example {
+public class Directory_Hider {
 
-	@RequestMapping(method = RequestMethod.POST)
-    String home(
-		@RequestParam(value = "person", defaultValue = "") String personName,
-		@RequestParam(value = "age", defaultValue = "") int age
-			   ) {
-        return "<h1>Hello " + personName + "! You are " + age + ".</h1>" ;
+	@RequestMapping(method = RequestMethod.GET)
+    String home() {
+		
+        return "";
     }
 	
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Example.class, args);
+		
+        SpringApplication.run(Directory_Hider.class, args);
     }
-
 }
