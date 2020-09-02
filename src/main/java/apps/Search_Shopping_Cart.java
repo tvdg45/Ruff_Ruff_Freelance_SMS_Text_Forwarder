@@ -1,6 +1,7 @@
 //Author: Timothy van der Graaff
 package apps;
 
+import configuration.Config;
 import controllers.Control_Search_Shopping_Cart_Items;
 import controllers.Control_Change_Shopping_Cart_Items;
 
