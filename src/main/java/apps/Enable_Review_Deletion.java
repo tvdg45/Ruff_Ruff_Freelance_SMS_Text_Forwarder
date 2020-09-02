@@ -55,7 +55,7 @@ public class Enable_Review_Deletion {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Enable_Review_Deletion.class, args);
     }    
