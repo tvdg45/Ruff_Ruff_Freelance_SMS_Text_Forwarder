@@ -34,10 +34,12 @@ public class Admin_Change_Item_For_Sale {
 		
         Connection use_open_connection;
         
-        use_open_connection = Config.openConnection() throws IOException;
-        
         if (change_item_for_sale.equals("Change item")) {
 			
+			try {
+				
+			use_open_connection = Config.openConnection();
+				
             Control_Change_For_Sale_Items.use_connection = use_open_connection;
             Control_Change_For_Sale_Items.item = item;
             Control_Change_For_Sale_Items.thumbnail = thumbnail;
@@ -49,6 +51,10 @@ public class Admin_Change_Item_For_Sale {
             Control_Change_For_Sale_Items.change_item_for_sale = change_item_for_sale;
             
             return Control_Change_For_Sale_Items.control_change_item_for_sale();
+			} catch (IOException e) {
+				
+				return "";
+			}
         } else {
 			
 			return "";
