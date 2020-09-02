@@ -31,6 +31,7 @@ public class Admin_For_Sale_Items_Interface {
 		
 		Connection use_open_connection;
 		
+		try {
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -48,6 +49,10 @@ public class Admin_For_Sale_Items_Interface {
 			Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
 			" \"pages\": " +
 			Control_Search_For_Sale_Items.control_calculate_page_number_count() + "}";
+		} catch (IOException e) {
+			
+			return "";
+		}
     }
 	
     public static void main(String[] args) throws Exception, IOException {
