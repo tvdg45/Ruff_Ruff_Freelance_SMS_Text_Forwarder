@@ -2,7 +2,7 @@
 package apps;
 
 import controllers.Control_Search_For_Sale_Item_Details;
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -49,7 +49,7 @@ public class Product_Reviews_Interface {
 			Control_Search_For_Sale_Item_Details.control_calculate_page_number_count() + "}";		
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Product_Reviews_Interface.class, args);
     }
