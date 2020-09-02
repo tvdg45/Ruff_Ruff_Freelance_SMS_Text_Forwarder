@@ -41,7 +41,12 @@ public class Product_Reviews_Interface {
 		Control_Search_For_Sale_Item_Details.page_number = page_number;
 		Control_Search_For_Sale_Item_Details.sort_by = sort_by;
 		
-		
+        return "{\"sale_product_details\": " +
+			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_details() + "," +
+			" \"sale_product_reviews\": " +
+			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_reviews() + "," +
+			" \"pages\": " +
+			Control_Search_For_Sale_Item_Details.control_calculate_page_number_count() + "}";		
     }
 	
     public static void main(String[] args) throws Exception {
