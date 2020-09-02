@@ -7,7 +7,7 @@ import controllers.Control_Change_For_Sale_Items;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-//import java.io.IOException;
+import java.io.IOException;
 
 import java.sql.Connection;
 import java.time.ZoneId;
@@ -98,7 +98,7 @@ public class Admin_Change_For_Sale_Item_Categories {
 		return "";
 	}
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Admin_Change_For_Sale_Item_Categories.class, args);
     }
