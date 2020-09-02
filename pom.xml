@@ -27,7 +27,7 @@
 		 
 		 <!-- Building an executable jar -->
 		 <groupId>org.apache.maven.plugins</groupId>
-		 <artifactId>maven-jar-plugin</artifactId>
+		 <!--<artifactId>maven-jar-plugin</artifactId>-->
 		 <artifactId>maven-compiler-plugin</artifactId>
 		 <version>3.1.0</version>
 		 <configuration>
