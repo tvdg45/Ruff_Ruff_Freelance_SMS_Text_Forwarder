@@ -4,7 +4,7 @@ package apps;
 import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -49,7 +49,7 @@ public class Change_Cart {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Change_Cart.class, args);
     }
