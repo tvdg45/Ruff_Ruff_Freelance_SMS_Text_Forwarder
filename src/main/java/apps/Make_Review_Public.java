@@ -23,7 +23,7 @@ public class Make_Review_Public {
     
 	@RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "security_code", defaultValue = "") security_code,
+		@RequestParam(value = "security_code", defaultValue = "") String security_code,
 		@RequestParam(value = "row_id", defaultValue = "") String row_id,
 		@RequestParam(value = "item_id", defaultValue = "") String item_id,
 		@RequestParam(value = "make_review_public", defaultValue = "") String make_review_public
