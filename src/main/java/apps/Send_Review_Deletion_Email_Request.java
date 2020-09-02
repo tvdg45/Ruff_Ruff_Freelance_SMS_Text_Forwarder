@@ -5,7 +5,7 @@ import configuration.Config;
 import controllers.Control_Change_Reviews;
 import utilities.Security_Code_Generator;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -53,7 +53,7 @@ public class Send_Review_Deletion_Email_Request {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Send_Review_Deletion_Email_Request.class, args);
     }
