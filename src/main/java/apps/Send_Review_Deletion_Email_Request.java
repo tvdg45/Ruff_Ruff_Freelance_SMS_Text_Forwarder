@@ -30,6 +30,7 @@ public class Send_Review_Deletion_Email_Request {
 		
 		Connection use_open_connection;
 		
+		try {
 		use_open_connection = Config.openConnection();
 		
 		//Set this default string, so that it can be randomly scrambled in to a specified number of characters.
@@ -48,6 +49,10 @@ public class Send_Review_Deletion_Email_Request {
 			
 			return Control_Change_Reviews.control_send_review_deletion_email_request();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
