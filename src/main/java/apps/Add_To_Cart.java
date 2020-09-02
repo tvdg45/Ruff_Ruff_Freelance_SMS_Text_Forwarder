@@ -7,7 +7,7 @@ import controllers.Control_Change_Shopping_Cart_Items;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -71,7 +71,7 @@ public class Add_To_Cart {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Add_To_Cart.class, args);
     }
