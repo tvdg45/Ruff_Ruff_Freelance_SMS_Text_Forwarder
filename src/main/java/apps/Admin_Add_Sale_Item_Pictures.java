@@ -7,7 +7,7 @@ import controllers.Control_Change_For_Sale_Items;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -57,7 +57,7 @@ public class Admin_Add_Sale_Item_Pictures {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Admin_Add_Sale_Item_Pictures.class, args);
     }
