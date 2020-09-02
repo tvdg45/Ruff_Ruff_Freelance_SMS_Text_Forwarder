@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 import java.time.ZoneId;
@@ -38,6 +37,8 @@ public class Admin_Add_Item_For_Sale {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
@@ -60,6 +61,10 @@ public class Admin_Add_Item_For_Sale {
 			
 			return Control_Change_For_Sale_Items.control_add_item_for_sale();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
