@@ -45,7 +45,7 @@ public class Add_To_Cart {
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
 		
-		try {
+		//try {
 			
 			use_open_connection = Config.openConnection();
 		
@@ -70,10 +70,10 @@ public class Add_To_Cart {
 			
 				return "";
 			}
-		} catch (IOException e) {
+		//} catch (IOException e) {
 			
-			return "";
-		}
+		//	return "";
+		//}
     }
 	
     public static void main(String[] args) throws Exception, IOException {
