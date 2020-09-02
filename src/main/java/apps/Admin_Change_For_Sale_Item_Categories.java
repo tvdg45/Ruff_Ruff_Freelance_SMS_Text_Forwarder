@@ -38,6 +38,7 @@ public class Admin_Change_For_Sale_Item_Categories {
 		
         Connection use_open_connection;
         
+		try {
         use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
@@ -96,6 +97,10 @@ public class Admin_Change_For_Sale_Item_Categories {
         }
 		
 		return "";
+		} catch (IOException e) {
+			
+			return "";
+		}
 	}
 	
     public static void main(String[] args) throws Exception, IOException {
