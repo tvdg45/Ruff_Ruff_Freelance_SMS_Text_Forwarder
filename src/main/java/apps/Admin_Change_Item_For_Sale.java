@@ -33,28 +33,28 @@ public class Admin_Change_Item_For_Sale {
 		
         Connection use_open_connection;
         
+		try {
+			
         if (change_item_for_sale.equals("Change item")) {
 			
-			try {
-				
-				use_open_connection = Config.openConnection();
-				
-            	Control_Change_For_Sale_Items.use_connection = use_open_connection;
-            	Control_Change_For_Sale_Items.item = item;
-            	Control_Change_For_Sale_Items.thumbnail = thumbnail;
-            	Control_Change_For_Sale_Items.category = category.split(",");
-            	Control_Change_For_Sale_Items.description = description;
-            	Control_Change_For_Sale_Items.price = price;
-            	Control_Change_For_Sale_Items.inventory = inventory;
-            	Control_Change_For_Sale_Items.row_id = row_id;
-            	Control_Change_For_Sale_Items.change_item_for_sale = change_item_for_sale;
-            
-            	return Control_Change_For_Sale_Items.control_change_item_for_sale();
-			} catch (IOException e) {
-				
-				return "";
-			}
+			use_open_connection = Config.openConnection();
+			
+			Control_Change_For_Sale_Items.use_connection = use_open_connection;
+			Control_Change_For_Sale_Items.item = item;
+            Control_Change_For_Sale_Items.thumbnail = thumbnail;
+            Control_Change_For_Sale_Items.category = category.split(",");
+            Control_Change_For_Sale_Items.description = description;
+            Control_Change_For_Sale_Items.price = price;
+            Control_Change_For_Sale_Items.inventory = inventory;
+            Control_Change_For_Sale_Items.row_id = row_id;
+            Control_Change_For_Sale_Items.change_item_for_sale = change_item_for_sale;
+			
+			return Control_Change_For_Sale_Items.control_change_item_for_sale();
         } else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
