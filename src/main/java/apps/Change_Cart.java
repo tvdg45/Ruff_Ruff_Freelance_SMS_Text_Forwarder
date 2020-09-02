@@ -31,6 +31,8 @@ public class Change_Cart {
 		
 		Connection use_open_connection;
 		
+		try {
+			
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -44,6 +46,10 @@ public class Change_Cart {
 			
 			return Control_Change_Shopping_Cart_Items.control_change_cart();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
