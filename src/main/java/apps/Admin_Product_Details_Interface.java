@@ -3,7 +3,7 @@ package apps;
 
 import configuration.Config;
 import controllers.Control_Search_For_Sale_Item_Details;
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -42,7 +42,7 @@ public class Admin_Product_Details_Interface {
 			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_reviews() + "}";
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Admin_Product_Details_Interface.class, args);
     }
