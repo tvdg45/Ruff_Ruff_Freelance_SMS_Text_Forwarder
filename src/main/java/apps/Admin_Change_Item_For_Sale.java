@@ -34,7 +34,7 @@ public class Admin_Change_Item_For_Sale {
 		
         Connection use_open_connection;
         
-        use_open_connection = Config.openConnection();
+        use_open_connection = Config.openConnection() throws IOException;
         
         if (change_item_for_sale.equals("Change item")) {
 			
