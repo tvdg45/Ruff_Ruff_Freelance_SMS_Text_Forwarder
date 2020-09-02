@@ -4,7 +4,7 @@ package apps;
 import configuration.Config;
 import controllers.Control_Change_Reviews;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -45,7 +45,7 @@ public class Delete_Review {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Delete_Review.class, args);
     }
