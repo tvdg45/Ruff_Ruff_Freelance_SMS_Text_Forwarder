@@ -8,7 +8,7 @@ import controllers.Control_Change_Shopping_Cart_Items;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-//import java.io.IOException;
+import java.io.IOException;
 //import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -84,7 +84,7 @@ public class Search_Shopping_Cart {
 		return return_string;
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Search_Shopping_Cart.class, args);
     }   
