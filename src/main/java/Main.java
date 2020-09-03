@@ -9,7 +9,7 @@ public class Main {
         Object[] sources = new Object[2];
         
         sources[0] = Directory_Hider.class;
-        sources[1] = For_Sale_Items_Interface.class;
+        sources[1] = apps.For_Sale_Items_Interface.class;
         SpringApplication.run(sources, args);
     }
 }
