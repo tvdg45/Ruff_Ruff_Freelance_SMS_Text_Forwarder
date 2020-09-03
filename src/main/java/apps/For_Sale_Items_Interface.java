@@ -28,7 +28,7 @@ public class For_Sale_Items_Interface {
 		@RequestParam(value = "search_items", defaultValue = "") String search_items
 			   ) {
 		
-		Connection use_open_connection;
+		/*Connection use_open_connection;
 		
 		try {
 		
@@ -51,7 +51,9 @@ public class For_Sale_Items_Interface {
 		} catch (IOException e) {
 			
 			return "";
-		}
+		}*/
+		
+		return "9";
     }
 	
     public static void main(String[] args) throws Exception, IOException {
