@@ -4,7 +4,6 @@ package apps;
 import configuration.Config;
 import controllers.Control_Search_For_Sale_Items;
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -34,14 +33,14 @@ public class Admin_For_Sale_Items_Interface {
 		try {
 		use_open_connection = Config.openConnection();
 		
-		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-		Control_Change_Shopping_Cart_Items.category = category;
-		Control_Change_Shopping_Cart_Items.keywords = keywords;
-		Control_Change_Shopping_Cart_Items.category = category;
-		Control_Change_Shopping_Cart_Items.results_per_page = results_per_page;
-		Control_Change_Shopping_Cart_Items.page_number = page_number;
-		Control_Change_Shopping_Cart_Items.sort_by = sort_by;
-		Control_Change_Shopping_Cart_Items.search_items = search_items;
+		Control_Search_For_Sale_Items.use_connection = use_open_connection;
+		Control_Search_For_Sale_Items.category = category;
+		Control_Search_For_Sale_Items.keywords = keywords;
+		Control_Search_For_Sale_Items.category = category;
+		Control_Search_For_Sale_Items.results_per_page = results_per_page;
+		Control_Search_For_Sale_Items.page_number = page_number;
+		Control_Search_For_Sale_Items.sort_by = sort_by;
+		Control_Search_For_Sale_Items.search_items = search_items;
 		
 		return "{\"sale_categories\": " +
 			Control_Search_For_Sale_Items.control_search_for_sale_categories() + "," +
