@@ -28,6 +28,9 @@
 		 <!-- Building an executable jar -->
 		 <groupId>org.apache.maven.plugins</groupId>
 		 <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+                <mainClass>Directory_Hider</mainClass>
+            </configuration>
 		 <version>3.1.0</version>
 		 <configuration>
 			 <archive>
