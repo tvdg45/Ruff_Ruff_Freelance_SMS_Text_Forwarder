@@ -36,7 +36,7 @@ public class Search_Shopping_Cart {
 		Connection use_open_connection;
 		
 		String search_guest_session = "";
-		String return_string;
+		String return_string = "";
 		
 		try {
 		
