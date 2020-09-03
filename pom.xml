@@ -50,7 +50,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>apps.For_Sale_Items_Interface</mainClass>
+									<mainClass>For_Sale_Items_Interface</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
