@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @EnableAutoConfiguration
+@RequestMapping("/for-sale-items-interface")
 public class For_Sale_Items_Interface {
     
-	@RequestMapping("/for-sale-items-interface")
 	@RequestMapping(method = RequestMethod.GET)
-    String home(
+    String itis(
 		@RequestParam(value = "category", defaultValue = "") String category,
 		@RequestParam(value = "keywords", defaultValue = "") String keywords,
 		@RequestParam(value = "results_per_page", defaultValue = "") String results_per_page,
