@@ -30,9 +30,9 @@
 						<id>Directory_Hider</id>
 						<configuration>
 							<archive>
-								<manifest>
+								<!--<manifest>
 									<mainClass>Directory_Hider</mainClass>
-								</manifest>
+								</manifest>-->
 							</archive>
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
@@ -88,5 +88,6 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<start-class>Directory_Hider</start-class>
 	</properties>
 </project>
