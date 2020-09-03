@@ -32,11 +32,6 @@ public class Product_Reviews_Interface {
 		
 		use_open_connection = Config.openConnection();
         
-        DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
-          
-        LocalDate localDate = LocalDate.now();
-        LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
-		
 		Control_Search_For_Sale_Item_Details.use_connection = use_open_connection;
 		Control_Search_For_Sale_Item_Details.item_id = item_id;
 		Control_Search_For_Sale_Item_Details.results_per_page = results_per_page;
