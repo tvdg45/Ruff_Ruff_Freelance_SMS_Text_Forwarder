@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://www.timothysdigitalsolutions.com", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/for-sale-items-interface")
