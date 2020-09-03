@@ -31,7 +31,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>For_Sale_Items_Interface</mainClass>
+									<mainClass>apps.For_Sale_Items_Interface</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -42,7 +42,7 @@
 						</configuration>
 						<phase>package</phase>
 						<goals>
-							<goal>run</goal>
+							<goal>start</goal>
 						</goals>
 					</execution>
 		</executions>
