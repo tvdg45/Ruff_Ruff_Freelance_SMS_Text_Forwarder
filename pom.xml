@@ -22,12 +22,31 @@
     <plugin>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-maven-plugin</artifactId>
-		<configuration>
+		<!--<configuration>
 			<mainClass>Directory_Hider</mainClass>
-		</configuration>
+		</configuration>-->
 		<executions>
 					<execution>
-						<id>build-a</id>
+						<id>Directory_Hider</id>
+						<configuration>
+							<archive>
+								<manifest>
+									<mainClass>Directory_Hider</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<!-- <appendAssemblyId>false</appendAssemblyId> -->
+							<finalName>Directory_Hider</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>For_Sale_Items_Interface</id>
 						<configuration>
 							<archive>
 								<manifest>
