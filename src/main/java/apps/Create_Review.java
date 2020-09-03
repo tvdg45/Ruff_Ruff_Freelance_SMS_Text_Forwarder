@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 import java.time.ZoneId;
@@ -52,6 +51,8 @@ public class Create_Review {
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
 		
+		try {
+		
 		Control_Change_Reviews.use_connection = use_open_connection;
 		Control_Change_Reviews.item_id = item_id;
 		Control_Change_Reviews.name = name;
@@ -68,6 +69,10 @@ public class Create_Review {
 			
 			return Control_Change_Reviews.control_create_review();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
