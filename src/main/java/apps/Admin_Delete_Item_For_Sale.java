@@ -51,6 +51,6 @@ public class Admin_Delete_Item_For_Sale {
 
     public static void main(String[] args) throws Exception, IOException {
 		
-        SpringApplication.run(Admin_Delete_Item_For_Sale.class, args);
+        SpringApplication.run(apps.Admin_Delete_Item_For_Sale.class, args);
     }
 }
