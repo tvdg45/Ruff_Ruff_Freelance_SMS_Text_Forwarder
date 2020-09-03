@@ -6,7 +6,6 @@ import controllers.Control_Change_Reviews;
 import utilities.Security_Code_Generator;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -42,6 +41,8 @@ public class Change_Review {
 		//Specify the number of characters for the new security code.
 		Security_Code_Generator.number_of_characters = 25;
         
+		try {
+			
 		Control_Change_Reviews.use_connection = use_open_connection;
 		Control_Change_Reviews.new_security_code = String.valueOf(Security_Code_Generator.generate_hash());
 		Control_Change_Reviews.row_id = row_id;
@@ -56,6 +57,10 @@ public class Change_Review {
 			
 			return Control_Change_Reviews.control_change_review();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
