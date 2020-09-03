@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -25,6 +24,8 @@ public class Admin_Extract_Receipts {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -33,6 +34,10 @@ public class Admin_Extract_Receipts {
 			Control_Change_Shopping_Cart_Items.control_search_receipts() + "," +
 			" \"items_sold\": " +
 			Control_Change_Shopping_Cart_Items.control_search_items_sold() + "}";
+		} catch (IOException e) {
+			
+			return "";
+		}
     }
 	
     public static void main(String[] args) throws Exception, IOException {
