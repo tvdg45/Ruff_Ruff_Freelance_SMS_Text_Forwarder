@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 import java.time.ZoneId;
@@ -36,6 +35,11 @@ public class Search_Shopping_Cart {
 		
 		Connection use_open_connection;
 		
+		String search_guest_session = "";
+		String return_string;
+		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
@@ -49,9 +53,6 @@ public class Search_Shopping_Cart {
         Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
         Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
 		
-        String search_guest_session;
-		String return_string;
-        
         search_guest_session = Control_Change_Shopping_Cart_Items.control_search_guest_session();
         
         if (search_guest_session.equals("success")) {
@@ -74,12 +75,16 @@ public class Search_Shopping_Cart {
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_items() + ",";
         return_string += " \"pages\": ";
         return_string += Control_Search_Shopping_Cart_Items.control_calculate_page_number_count() + "}";
-        
+			
         try {
             
             use_open_connection.close();
         } catch (Exception e) {
-        }
+        }			
+		} catch (IOException e) {
+			
+			return_string += "";
+		}
 		
 		return return_string;
     }
