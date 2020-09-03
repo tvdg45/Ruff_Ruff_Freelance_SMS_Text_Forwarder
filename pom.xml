@@ -22,16 +22,16 @@
     <plugin>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-maven-plugin</artifactId>
-		<configuration>
+		<!--<configuration>
 			<mainClass>apps.For_Sale_Items_Interface</mainClass>
-		</configuration>
+		</configuration>-->
 		<executions>
 					<execution>
 						<id>Directory_Hider</id>
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>For_Sale_Items_Interface</mainClass>
+									<mainClass>Directory_Hider</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
