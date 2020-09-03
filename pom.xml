@@ -24,6 +24,7 @@
 		<artifactId>spring-boot-maven-plugin</artifactId>
 		<configuration>
 		  <mainClass>Directory_Hider</mainClass>
+		  <mainClass>For_Sale_Items_Interface</mainClass>
 		</configuration>
 	 </plugin>
 	 <plugin>
