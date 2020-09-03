@@ -12,7 +12,7 @@ public class Directory_Hider {
 	@RequestMapping(method = RequestMethod.GET)
     String home() {
 		
-        return "8";
+        return "";
     }
 	
     public static void main(String[] args) throws Exception {
