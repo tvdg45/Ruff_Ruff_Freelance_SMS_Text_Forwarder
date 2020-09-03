@@ -3,7 +3,6 @@ package apps;
 
 import controllers.Control_Search_For_Sale_Items;
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -30,6 +29,8 @@ public class For_Sale_Items_Interface {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
         
 		Control_Search_For_Sale_Items.use_connection = use_open_connection;
@@ -46,6 +47,10 @@ public class For_Sale_Items_Interface {
 			Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
 			" \"pages\": " +
 			Control_Search_For_Sale_Items.control_calculate_page_number_count() + "}";
+		} catch (IOException e) {
+			
+			return "";
+		}
     }
 	
     public static void main(String[] args) throws Exception, IOException {
