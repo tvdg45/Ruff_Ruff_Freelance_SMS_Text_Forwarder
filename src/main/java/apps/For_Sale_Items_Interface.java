@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @EnableAutoConfiguration
+@ComponentScan(basePackages = {"com.demo"})
 @RequestMapping("/for-sale-items-interface")
 public class For_Sale_Items_Interface {
     
