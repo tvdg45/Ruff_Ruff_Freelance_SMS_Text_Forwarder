@@ -41,9 +41,6 @@
 							<finalName>For_Sale_Items_Interface</finalName>
 						</configuration>
 						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
 					</execution>
 		</executions>
 	 </plugin>
