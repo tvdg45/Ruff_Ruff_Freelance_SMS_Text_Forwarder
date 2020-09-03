@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_For_Sale_Items;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -51,6 +50,6 @@ public class Admin_Delete_Item_For_Sale {
 
     public static void main(String[] args) throws Exception, IOException {
 		
-        SpringApplication.run(apps.Admin_Delete_Item_For_Sale.class, args);
+        SpringApplication.run(Admin_Delete_Item_For_Sale.class, args);
     }
 }
