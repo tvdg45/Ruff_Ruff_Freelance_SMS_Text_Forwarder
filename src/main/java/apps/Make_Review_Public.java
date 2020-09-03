@@ -6,7 +6,6 @@ import controllers.Control_Change_Reviews;
 import utilities.Security_Code_Generator;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -31,6 +30,8 @@ public class Make_Review_Public {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
@@ -52,6 +53,10 @@ public class Make_Review_Public {
 			
 			return Control_Change_Reviews.control_make_review_public();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
