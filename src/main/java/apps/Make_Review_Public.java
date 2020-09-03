@@ -34,8 +34,6 @@ public class Make_Review_Public {
 		
 		use_open_connection = Config.openConnection();
         
-        DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
-		
 		//Set this default string, so that it can be randomly scrambled in to a specified number of characters.
 		Security_Code_Generator.entire_string = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		
