@@ -4,8 +4,7 @@ package apps;
 import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
-//import java.io.IOException;
-//import java.io.PrintWriter;
+import java.io.IOException;
 
 import java.sql.Connection;
 
@@ -41,7 +40,7 @@ public class Admin_Delete_Receipts {
 		}
     }
 	
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(Admin_Delete_Receipts.class, args);
     }
