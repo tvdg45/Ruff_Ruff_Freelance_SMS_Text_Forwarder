@@ -25,6 +25,27 @@
 		<configuration>
 			<mainClass>Directory_Hider</mainClass>
 		</configuration>
+		<executions>
+					<execution>
+						<id>build-a</id>
+						<configuration>
+							<archive>
+								<manifest>
+									<mainClass>For_Sale_Items_Interface</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<!-- <appendAssemblyId>false</appendAssemblyId> -->
+							<finalName>For_Sale_Items_Interface</finalName>
+						</configuration>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+		</executions>
 	 </plugin>
 	 <plugin>
 		 
