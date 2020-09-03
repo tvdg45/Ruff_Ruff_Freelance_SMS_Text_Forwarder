@@ -30,9 +30,9 @@
 						<id>Directory_Hider</id>
 						<configuration>
 							<archive>
-								<!--<manifest>
-									<mainClass>Directory_Hider</mainClass>
-								</manifest>-->
+								<manifest>
+									<mainClass>For_Sale_Items_Interface</mainClass>
+								</manifest>
 							</archive>
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
