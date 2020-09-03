@@ -32,7 +32,9 @@ public class Change_Review {
 			   ) {
 		
 		Connection use_open_connection;
-		
+
+		try {
+			
 		use_open_connection = Config.openConnection();
 		
 		//Set this default string, so that it can be randomly scrambled in to a specified number of characters.
@@ -40,8 +42,6 @@ public class Change_Review {
 		
 		//Specify the number of characters for the new security code.
 		Security_Code_Generator.number_of_characters = 25;
-        
-		try {
 			
 		Control_Change_Reviews.use_connection = use_open_connection;
 		Control_Change_Reviews.new_security_code = String.valueOf(Security_Code_Generator.generate_hash());
@@ -60,7 +60,7 @@ public class Change_Review {
 			
 			return "";
 		}
-		} catch (Exception e) {
+		} catch (IOException e) {
 			
 			return "";
 		}
