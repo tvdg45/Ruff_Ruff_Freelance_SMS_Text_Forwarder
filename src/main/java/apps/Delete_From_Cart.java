@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -29,6 +28,8 @@ public class Delete_From_Cart {
 		
 		Connection use_open_connection;
 		
+		try {
+			
 		use_open_connection = Config.openConnection();
         
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -40,6 +41,10 @@ public class Delete_From_Cart {
 			
 			return Control_Change_Shopping_Cart_Items.control_delete_from_cart();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
