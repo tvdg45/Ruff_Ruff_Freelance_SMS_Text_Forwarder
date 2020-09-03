@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/for-sale-items-interface")
 public class For_Sale_Items_Interface {
     
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.GET)
     String home(
 		@RequestParam(value = "category", defaultValue = "") String category,
 		@RequestParam(value = "keywords", defaultValue = "") String keywords,
