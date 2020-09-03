@@ -22,9 +22,9 @@
     <plugin>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-maven-plugin</artifactId>
-		<!--<configuration>
+		<configuration>
 			<mainClass>Directory_Hider</mainClass>
-		</configuration>-->
+		</configuration>
 		<executions>
 					<execution>
 						<id>Directory_Hider</id>
