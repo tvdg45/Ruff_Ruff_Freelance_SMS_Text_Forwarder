@@ -12,14 +12,14 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "https://www.timothysdigitalsolutions.com", maxAge = 3600)
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/for-sale-items-interface")
 public class For_Sale_Items_Interface {
     
-	@RequestMapping(method = RequestMethod.GET)
-    String itis(
+	@RequestMapping(method = RequestMethod.POST)
+    String home(
 		@RequestParam(value = "category", defaultValue = "") String category,
 		@RequestParam(value = "keywords", defaultValue = "") String keywords,
 		@RequestParam(value = "results_per_page", defaultValue = "") String results_per_page,
@@ -28,7 +28,7 @@ public class For_Sale_Items_Interface {
 		@RequestParam(value = "search_items", defaultValue = "") String search_items
 			   ) {
 		
-		/*Connection use_open_connection;
+		Connection use_open_connection;
 		
 		try {
 		
@@ -51,9 +51,7 @@ public class For_Sale_Items_Interface {
 		} catch (IOException e) {
 			
 			return "";
-		}*/
-		
-		return "9";
+		}
     }
 	
     public static void main(String[] args) throws Exception {
