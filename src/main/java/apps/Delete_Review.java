@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_Reviews;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -29,6 +28,8 @@ public class Delete_Review {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_Reviews.use_connection = use_open_connection;
@@ -40,6 +41,10 @@ public class Delete_Review {
 			
 			return Control_Change_Reviews.control_delete_review();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
