@@ -89,6 +89,6 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<start-class>Directory_Hider</start-class>
-		<start-class>apps.For_Sale_Items_Interface</start-class>
+		<!--<start-class>apps.For_Sale_Items_Interface</start-class>-->
 	</properties>
 </project>
