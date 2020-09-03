@@ -38,6 +38,8 @@ public class Create_Review {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
 		//Set this default string, so that it can be randomly scrambled in to a specified number of characters.
@@ -50,8 +52,6 @@ public class Create_Review {
           
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
-		
-		try {
 		
 		Control_Change_Reviews.use_connection = use_open_connection;
 		Control_Change_Reviews.item_id = item_id;
