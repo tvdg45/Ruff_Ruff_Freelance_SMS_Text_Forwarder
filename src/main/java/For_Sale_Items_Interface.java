@@ -54,8 +54,8 @@ public class For_Sale_Items_Interface {
 		return "9";
     }
 	
-    public static void main(String[] args) throws Exception, IOException {
+    /*public static void main(String[] args) throws Exception, IOException {
 		
         SpringApplication.run(For_Sale_Items_Interface.class, args);
-    }   
+    }*/   
 }
