@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Object[] sources = new Object[27];
+        Object[] sources = new Object[28];
         
         sources[0] = Directory_Hider.class;
         sources[1] = apps.Add_To_Cart.class;
