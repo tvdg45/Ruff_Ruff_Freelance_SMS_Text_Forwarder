@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 import java.time.ZoneId;
@@ -34,6 +33,8 @@ public class Create_Receipt {
 		
 		Connection use_open_connection;
 		
+		try {
+			
 		use_open_connection = Config.openConnection();
         
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
@@ -52,6 +53,10 @@ public class Create_Receipt {
 			
 			return Control_Change_Shopping_Cart_Items.control_create_receipt();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
