@@ -31,7 +31,6 @@
 		<!-- This is essential -->
 		<load-on-startup>1</load-on-startup>
 	  </servlet>
-	
     <servlet>
         <servlet-name>For_Sale_Items_Interface</servlet-name>
         <servlet-class>apps.For_Sale_Items_Interface</servlet-class>
@@ -139,9 +138,25 @@
     <servlet>
         <servlet-name>Admin_Delete_Receipts</servlet-name>
         <servlet-class>apps.Admin_Delete_Receipts</servlet-class>
-    </servlet>
-    
-    <!--<servlet-mapping>
+	</servlet>
+  <servlet>
+      	<servlet-name>boxOffice</servlet-name>
+      	<servlet-class>org.springframework.framework.web.workflow.CommandServlet</servlet-class>
+  </servlet> 
+ 
+ 
+ 
+ 
+  <servlet-mapping>
+        	<servlet-name>boxOffice</servlet-name>
+        	<url-pattern>/*.html</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+          	<servlet-name>config</servlet-name>
+          	<url-pattern>/context/context.html</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>For_Sale_Items_Interface</servlet-name>
         <url-pattern>/for-sale-items-interface</url-pattern>
     </servlet-mapping>
@@ -248,27 +263,7 @@
     <servlet-mapping>
         <servlet-name>Admin_Delete_Receipts</servlet-name>
         <url-pattern>/admin-delete-receipts</url-pattern>
-    </servlet-mapping>-->
- 
- 
-  <servlet>
-      	<servlet-name>boxOffice</servlet-name>
-      	<servlet-class>org.springframework.framework.web.workflow.CommandServlet</servlet-class>
-  </servlet> 
- 
- 
- 
- 
-  <servlet-mapping>
-        	<servlet-name>boxOffice</servlet-name>
-        	<url-pattern>/*.html</url-pattern>
-  </servlet-mapping>
- 
-  <servlet-mapping>
-          	<servlet-name>config</servlet-name>
-          	<url-pattern>/context/context.html</url-pattern>
-  </servlet-mapping>
- 
+    </servlet-mapping> 
 
 <session-config>
 <session-timeout>60</session-timeout>
