@@ -263,7 +263,7 @@
     <servlet-mapping>
         <servlet-name>Admin_Delete_Receipts</servlet-name>
         <url-pattern>/admin-delete-receipts</url-pattern>
-    </servlet-mapping> -->
+    </servlet-mapping>-->
 
 <session-config>
 <session-timeout>60</session-timeout>
