@@ -26,6 +26,8 @@ public class Admin_Delete_Receipts {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -35,6 +37,10 @@ public class Admin_Delete_Receipts {
 			
 			return Control_Change_Shopping_Cart_Items.control_delete_receipts();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
