@@ -6,7 +6,6 @@ import controllers.Control_Change_Reviews;
 import utilities.Security_Code_Generator;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -31,6 +30,8 @@ public class Enable_Review_Deletion {
 		
 		Connection use_open_connection;
 		
+		try {
+		
 		use_open_connection = Config.openConnection();
 		
 		//Set this default string, so that it can be randomly scrambled in to a specified number of characters.
@@ -50,6 +51,10 @@ public class Enable_Review_Deletion {
 			
 			return "\n" + Control_Change_Reviews.control_enable_review_deletion();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
