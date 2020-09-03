@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -28,6 +27,8 @@ public class Clear_All_Carts {
 		
 		Connection use_open_connection;
 		
+		try {
+			
 		use_open_connection = Config.openConnection();
         
 		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
@@ -38,6 +39,10 @@ public class Clear_All_Carts {
 			
 			return Control_Change_Shopping_Cart_Items.control_clear_all_carts();
 		} else {
+			
+			return "";
+		}
+		} catch (IOException e) {
 			
 			return "";
 		}
