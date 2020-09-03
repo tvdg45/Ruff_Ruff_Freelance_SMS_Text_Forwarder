@@ -25,46 +25,6 @@
 		<!--<configuration>
 			<mainClass>apps.For_Sale_Items_Interface</mainClass>
 		</configuration>-->
-		<executions>
-					<execution>
-						<id>Directory_Hider</id>
-						<configuration>
-							<archive>
-								<manifest>
-									<mainClass>Directory_Hider</mainClass>
-								</manifest>
-							</archive>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-							<!-- <appendAssemblyId>false</appendAssemblyId> -->
-							<finalName>Directory_Hider</finalName>
-						</configuration>
-						<phase>package</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>For_Sale_Items_Interface</id>
-						<configuration>
-							<archive>
-								<manifest>
-									<mainClass>apps.For_Sale_Items_Interface</mainClass>
-								</manifest>
-							</archive>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-							<!-- <appendAssemblyId>false</appendAssemblyId> -->
-							<finalName>For_Sale_Items_Interface</finalName>
-						</configuration>
-						<phase>package</phase>
-						<goals>
-							<goal>start</goal>
-						</goals>
-					</execution>
-		</executions>
 	 </plugin>
 	 <plugin>
 		 
@@ -88,7 +48,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<!--<start-class>Directory_Hider</start-class>-->
+		<start-class>Directory_Hider</start-class>
 		<!--<start-class>apps.For_Sale_Items_Interface</start-class>-->
 	</properties>
 </project>
