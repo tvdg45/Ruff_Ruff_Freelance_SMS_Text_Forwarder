@@ -64,11 +64,16 @@ public class Config {
                     database_name = credentials[4];
                     
                     database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
+					
+					LOGGER.log(Level.INFO, "Data url connection: " + database_url);
                 } catch (Exception e) {
 					
-					LOGGER.log(Level.INFO, e.getMessage());
+					LOGGER.log(Level.INFO, "Exceptional: " + e.getMessage());
                 }
-            }
+            } else {
+				
+				LOGGER.log(Level.INFO, "Just because: " + credentials.length);
+			}
         }
     }
     
