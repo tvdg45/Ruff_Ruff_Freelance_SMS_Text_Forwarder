@@ -36,6 +36,8 @@ public class Config {
         conection.setRequestMethod("POST");
         
         int response_code = conection.getResponseCode();
+		
+		LOGGER.log(Level.INFO, "response code: " + response_code);
         
         if (response_code == HttpURLConnection.HTTP_OK) {
             
