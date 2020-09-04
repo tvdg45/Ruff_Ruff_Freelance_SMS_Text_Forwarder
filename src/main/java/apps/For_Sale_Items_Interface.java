@@ -47,7 +47,7 @@ public class For_Sale_Items_Interface {
 			" \"sale_items\": " +
 			//Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
 			" \"pages\": " +
-			Control_Search_For_Sale_Items.control_calculate_page_number_count() + "}";
+			/*Control_Search_For_Sale_Items.control_calculate_page_number_count()*/ + "}";
 		} catch (IOException e) {
 			
 			return "this 1: " + e.getMessage();
