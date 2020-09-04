@@ -65,6 +65,8 @@ public class Config {
                     
                     database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
                 } catch (Exception e) {
+					
+					LOGGER.log(Level.INFO, e.getMessage());
                 }
             }
         }
