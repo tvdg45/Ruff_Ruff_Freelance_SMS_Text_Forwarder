@@ -61,6 +61,6 @@ public class For_Sale_Items_Interface {
 	
     public static void main(String[] args) throws Exception {
 		
-        SpringApplication.run(For_Sale_Items_Interface.class, args);
+        SpringApplication.run(apps.For_Sale_Items_Interface.class, args);
     }   
 }
