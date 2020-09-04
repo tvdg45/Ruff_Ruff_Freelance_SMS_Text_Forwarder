@@ -23,9 +23,9 @@ public class Control_Search_For_Sale_Items extends models.Search_For_Sale_Items 
         
         connection = use_connection;
         
-        Show_For_Sale_Items.for_sale_categories = search_sale_categories();
+        //Show_For_Sale_Items.for_sale_categories = search_sale_categories();
         
-        output += Show_For_Sale_Items.show_for_sale_categories();
+        //output += Show_For_Sale_Items.show_for_sale_categories();
         
         return output;
     }
