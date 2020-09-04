@@ -147,10 +147,7 @@ public abstract class Search_For_Sale_Items {
             create_new_sale_categories_table();
             
             output.add("fail");
-        } catch (Exception e) {
-			
-			output.add(String.valueOf(connection));
-		}
+        }
         
         return output;
     }
