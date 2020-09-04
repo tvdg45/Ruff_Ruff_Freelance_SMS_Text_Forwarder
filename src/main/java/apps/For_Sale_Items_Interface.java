@@ -43,7 +43,7 @@ public class For_Sale_Items_Interface {
 		Control_Search_For_Sale_Items.search_items = search_items;
 		
 		return "{\"sale_categories\": " +
-			//Control_Search_For_Sale_Items.control_search_for_sale_categories() + "," +
+			Control_Search_For_Sale_Items.control_search_for_sale_categories() + "," +
 			" \"sale_items\": " +
 			//Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
 			" \"pages\": " /*+
