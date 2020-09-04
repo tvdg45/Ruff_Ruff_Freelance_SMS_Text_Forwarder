@@ -51,7 +51,7 @@ public class For_Sale_Items_Interface {
 		} catch (IOException e) {
 			
 			return "this 1: " + e.getMessage();
-		} catch (NullPointerException e) {
+		} catch (Exception e) {
 			
 			return "this 2: " + e.getMessage();
 		}
