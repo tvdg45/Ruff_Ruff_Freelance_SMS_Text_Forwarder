@@ -50,7 +50,10 @@ public class For_Sale_Items_Interface {
 			Control_Search_For_Sale_Items.control_calculate_page_number_count() + "}";
 		} catch (IOException e) {
 			
-			return "";
+			return "this 1: " + e.getMessage();
+		} catch (Exception e) {
+			
+			return "this 2: " + e.getMessage();
 		}
 		
 		//return "88";
