@@ -149,7 +149,7 @@ public abstract class Search_For_Sale_Items {
             output.add("fail");
         } catch (Exception e) {
 			
-			output.add(e.getMessage());
+			output.add(connection);
 		}
         
         return output;
