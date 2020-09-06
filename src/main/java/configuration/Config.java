@@ -15,6 +15,8 @@ import java.util.logging.Logger;
 
 import java.util.ArrayList;
 
+import org.springframework.web.client.RestTemplate;
+
 public class Config {
     
     private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -28,20 +30,30 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart");
-        
+        //URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart");
+		
+		String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";    
         String read_line;
+		
+// create an instance of RestTemplate
+RestTemplate restTemplate = new RestTemplate();
+
+// request body parameters
+Map<String, String> request_parameters = new HashMap<>();
+
+// send POST request
+ResponseEntity<Void> response = restTemplate.postForEntity(url_for_get_request, request_parameters, Void.class);
         
-        HttpURLConnection conection = (HttpURLConnection)url_for_get_request.openConnection();
+        /*HttpURLConnection conection = (HttpURLConnection)url_for_get_request.openConnection();
         conection.setRequestMethod("POST");
         
         int response_code = conection.getResponseCode();
 		
-		LOGGER.log(Level.INFO, "response code: " + response_code);
+		LOGGER.log(Level.INFO, "response code: " + response_code);*/
         
-        if (response_code == HttpURLConnection.HTTP_OK) {
+        if (response.getStatusCode() == HttpStatus.OK) {
             
-            StringBuilder response;
+            /*StringBuilder response;
             
             try (BufferedReader in = new BufferedReader(new InputStreamReader(conection.getInputStream()))) {
                 
@@ -51,9 +63,9 @@ public class Config {
                     
                     response.append(read_line);
                 }
-            }
+            }*/
             
-            String[] credentials = response.toString().split("\\s*,\\s*");
+            String[] credentials = response.getBody().toString().split("\\s*,\\s*");
             
             if (credentials.length == 5) {
                 
@@ -66,16 +78,9 @@ public class Config {
                     database_name = credentials[4];
                     
                     database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
-					
-					LOGGER.log(Level.INFO, "Data url connection: " + database_url);
                 } catch (Exception e) {
-					
-					LOGGER.log(Level.INFO, "Exceptional: " + e.getMessage());
                 }
-            } else {
-				
-				LOGGER.log(Level.INFO, "Just because: " + credentials.length);
-			}
+            }
         }
     }
     
