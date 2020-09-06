@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import org.springframework.web.client.RestTemplate;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -42,11 +43,21 @@ public class Config {
 // create an instance of RestTemplate
 RestTemplate restTemplate = new RestTemplate();
 
+// create headers
+HttpHeaders headers = new HttpHeaders();
+// set `content-type` header
+headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+// set `accept` header
+headers.setAccept(Collections.singletonList(MediaType.APPLICATION_FORM_URLENCODED));
+
 // request body parameters
-Map<String, String> request_parameters = new HashMap<>();
+Map<String, Object> request_parameters = new HashMap<>();
+
+// build the request
+HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
 
 // send POST request
-ResponseEntity<Void> response = restTemplate.postForEntity(url_for_get_request, request_parameters, Void.class);
+ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, Void.class);
         
         /*HttpURLConnection conection = (HttpURLConnection)url_for_get_request.openConnection();
         conection.setRequestMethod("POST");
