@@ -54,6 +54,8 @@ ResponseEntity<Void> response = restTemplate.postForEntity(url_for_get_request, 
         int response_code = conection.getResponseCode();
 		
 		LOGGER.log(Level.INFO, "response code: " + response_code);*/
+		
+		LOGGER.log(Level.INFO, "credibility: " + response.getBody());
         
         if (response.getStatusCode() == HttpStatus.OK) {
             
