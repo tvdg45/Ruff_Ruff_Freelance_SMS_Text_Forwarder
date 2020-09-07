@@ -121,7 +121,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
             return connection;
         } catch (ClassNotFoundException | SQLException e) {
             
-            LOGGER.log(Level.INFO, "Unable to connect to the database");
+            LOGGER.log(Level.INFO, e.getMessage());
             
             return null;
         }
