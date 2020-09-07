@@ -39,32 +39,23 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        //URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart");
-		
 		String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";    
         String read_line;
 		
-// create an instance of RestTemplate
-RestTemplate restTemplate = new RestTemplate();
-
-// create headers
-HttpHeaders headers = new HttpHeaders();
-// set `content-type` header
-//headers.setContentType(MediaType.ALL);
-// set `accept` header
-//headers.setAccept(Collections.singletonList(MediaType.ALL));
-
-// request body parameters
-Map<String, Object> request_parameters = new HashMap<>();
-
-// build the request
-HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
-
-// send POST request
-ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
-        
-		LOGGER.log(Level.INFO, "credibility: " + response.getBody());
-        
+		RestTemplate restTemplate = new RestTemplate();
+		
+		//Create headers
+		HttpHeaders headers = new HttpHeaders();
+		
+		//Request body parameters
+		Map<String, Object> request_parameters = new HashMap<>();
+		
+		//Build the request
+		HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
+		
+		//Send POST request
+		ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
+		
         if (response.getStatusCode() == HttpStatus.OK) {
             
             String[] credentials = response.getBody().toString().split("\\s*,\\s*");
@@ -80,9 +71,6 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
                     database_name = credentials[4].trim();
 					
 					database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
-                    
-					LOGGER.log(Level.INFO, /*"server: " + database_server + " username: " + database_username + " password: " + database_password +
-							  " port: " + database_port +*/ " database name: " + database_name + "[" + credentials[4].trim() + "]");
                 } catch (Exception e) {
                 }
             }
