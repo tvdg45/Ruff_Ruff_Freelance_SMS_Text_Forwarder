@@ -49,9 +49,9 @@ RestTemplate restTemplate = new RestTemplate();
 // create headers
 HttpHeaders headers = new HttpHeaders();
 // set `content-type` header
-headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+headers.setContentType(MediaType.TEXT_PLAIN);
 // set `accept` header
-headers.setAccept(Collections.singletonList(MediaType.APPLICATION_FORM_URLENCODED));
+headers.setAccept(Collections.singletonList(MediaType.TEXT_PLAIN));
 
 // request body parameters
 Map<String, Object> request_parameters = new HashMap<>();
