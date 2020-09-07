@@ -60,7 +60,7 @@ Map<String, Object> request_parameters = new HashMap<>();
 HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
 
 // send POST request
-ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, Void.class);
+ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
         
         /*HttpURLConnection conection = (HttpURLConnection)url_for_get_request.openConnection();
         conection.setRequestMethod("POST");
