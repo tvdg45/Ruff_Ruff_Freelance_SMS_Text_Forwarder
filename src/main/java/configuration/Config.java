@@ -106,7 +106,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
     
     public static Connection openConnection() throws IOException {
         
-        /*try {
+        try {
             
             Class.forName("com.mysql.jdbc.Driver");
             
@@ -120,11 +120,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
             LOGGER.log(Level.INFO, "Unable to connect to the database");
             
             return null;
-        }*/
-		
-		call_database_information();
-		
-		return null;
+        }
     }
     
     public static ArrayList<String> bad_domain() {
