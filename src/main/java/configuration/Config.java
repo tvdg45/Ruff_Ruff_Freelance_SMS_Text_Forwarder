@@ -108,7 +108,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
         
 		call_database_information();
 		
-		LOGGER.log(Level.INFO, "database connector: " + database_url);
+		LOGGER.log(Level.INFO, "database connector: " + database_url + ", username: " + database_username + " password: " + database_password);
 		
         try {
             
