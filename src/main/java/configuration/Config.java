@@ -73,11 +73,11 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
                 
                 try {
 
-                    database_server = credentials[0];
-                    database_username = credentials[1];
-                    database_password = credentials[2];
-                    database_port = credentials[3];
-                    database_name = "timothys_digital_solutions_company_website";
+                    database_server = credentials[0].trim();
+                    database_username = credentials[1].trim();
+                    database_password = credentials[2].trim();
+                    database_port = credentials[3].trim();
+                    database_name = credentials[4].trim();
 					
 					database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
                     
