@@ -30,8 +30,6 @@ public class For_Sale_Items_Interface {
 		
 		Connection use_open_connection;
 		
-		try {
-		
 		use_open_connection = Config.openConnection();
         
 		Control_Search_For_Sale_Items.use_connection = use_open_connection;
@@ -45,18 +43,9 @@ public class For_Sale_Items_Interface {
 		return "{\"sale_categories\": " +
 			Control_Search_For_Sale_Items.control_search_for_sale_categories() + "," +
 			" \"sale_items\": " +
-			//Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
-			" \"pages\": " /*+
-			Control_Search_For_Sale_Items.control_calculate_page_number_count()*/ + "}";
-		} catch (IOException e) {
-			
-			return "this 1: " + e.getMessage();
-		} catch (Exception e) {
-			
-			return "this 2: " + e.getMessage();
-		}
-		
-		//return "88";
+			Control_Search_For_Sale_Items.control_search_for_sale_items() + "," +
+			" \"pages\": " +
+			Control_Search_For_Sale_Items.control_calculate_page_number_count() + "}";
     }
 	
     public static void main(String[] args) throws Exception {
