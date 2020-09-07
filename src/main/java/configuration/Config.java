@@ -98,7 +98,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
                     database_port = credentials[3];
                     database_name = credentials[4];
                     
-                    database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
+                    database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/timothys_digital_solutions_company_website";
                 } catch (Exception e) {
                 }
             }
