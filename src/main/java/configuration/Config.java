@@ -84,7 +84,7 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
                     database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/timothys_digital_solutions_company_website";
 					
 					LOGGER.log(Level.INFO, "server: " + database_server + " username: " + database_username + " password: " + database_password +
-							  " port: " + database_port + " database name: " + database_name);
+							  " port: " + database_port + " Database name: " + database_name);
                 } catch (Exception e) {
                 }
             }
