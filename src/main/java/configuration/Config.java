@@ -107,15 +107,15 @@ ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request
     
     public static Connection openConnection() throws IOException {
         
-		call_database_information();
+		//call_database_information();
 		
-		LOGGER.log(Level.INFO, "database connector: " + database_url + ", username: " + database_username + " password: " + database_password);
+		//LOGGER.log(Level.INFO, "database connector: " + database_url + ", username: " + database_username + " password: " + database_password);
 		
         try {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            //call_database_information();
+            call_database_information();
             
             Connection connection = DriverManager.getConnection(database_url, database_username, database_password);
             
