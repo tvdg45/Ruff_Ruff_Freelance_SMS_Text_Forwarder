@@ -643,7 +643,7 @@ public class Change_Shopping_Cart_Items {
                 
                 records_to_delete++;
 				
-				LOGGER.log(Level.INFO, "deleted item from cart: " + e.getMessage(Integer.parseInt(get_row_id()[i])));
+				LOGGER.log(Level.INFO, "deleted item from cart: " + Integer.parseInt(get_row_id()[i]));
             }
             
             if (records_to_delete > 0) {
