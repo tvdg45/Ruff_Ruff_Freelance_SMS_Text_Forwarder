@@ -41,6 +41,8 @@ public class Search_Shopping_Cart {
 		try {
 		
 		use_open_connection = Config.openConnection();
+			
+		Control_Search_Shopping_Cart_Items.use_connection = use_open_connection;
 		
         DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
           
