@@ -54,6 +54,7 @@ public class Search_Shopping_Cart {
         Control_Change_Shopping_Cart_Items.raw_time_received = raw_time_received;
         Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
         Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
+		Control_Search_Shopping_Cart_Items.guest_session = guest_session;
 		
         search_guest_session = Control_Change_Shopping_Cart_Items.control_search_guest_session();
         
