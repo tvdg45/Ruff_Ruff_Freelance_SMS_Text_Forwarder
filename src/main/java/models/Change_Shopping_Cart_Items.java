@@ -642,6 +642,8 @@ public class Change_Shopping_Cart_Items {
                 delete_statement.addBatch();
                 
                 records_to_delete++;
+				
+				LOGGER.log(Level.INFO, "deleted item from cart: " + e.getMessage(Integer.parseInt(get_row_id()[i])));
             }
             
             if (records_to_delete > 0) {
