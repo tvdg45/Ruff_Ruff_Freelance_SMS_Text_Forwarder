@@ -146,7 +146,7 @@ public class Search_Shopping_Cart_Items {
             create_new_shopping_cart_table();
             
             row_id.add("0");
-            item.add("fail 1");
+            item.add("fail");
             thumbnail.add("fail");
             item_category.add("fail");
             description.add("fail");
@@ -158,7 +158,7 @@ public class Search_Shopping_Cart_Items {
             LOGGER.log(Level.INFO, e.getMessage());
             
             row_id.add("0");
-            item.add("fail 2");
+            item.add("fail");
             thumbnail.add("fail");
             item_category.add("fail");
             description.add("fail");
