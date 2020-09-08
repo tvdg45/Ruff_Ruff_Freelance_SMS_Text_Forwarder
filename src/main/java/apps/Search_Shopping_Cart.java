@@ -48,7 +48,7 @@ public class Search_Shopping_Cart {
         LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
 		
         Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-        Control_Change_Shopping_Cart_Items.guest_session = guest_session;
+        Control_Change_Shopping_Cart_Items.guest_session = "b577ca16f3ba02c697cfb22b8baa0ef6e441fcaec4154d294b98c71e8f9fdd2d";
         Control_Change_Shopping_Cart_Items.raw_time_received = raw_time_received;
         Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
         Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
