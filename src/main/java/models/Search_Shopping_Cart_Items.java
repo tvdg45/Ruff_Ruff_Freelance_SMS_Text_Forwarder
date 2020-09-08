@@ -138,8 +138,6 @@ public class Search_Shopping_Cart_Items {
                 quantity.add("0");
                 item_id.add("0");
             }
-			
-			LOGGER.log(Level.INFO, "guest cart: " + get_guest_session());
         } catch (SQLException e) {
             
             LOGGER.log(Level.INFO, "The 'company_shopping_cart_items' " +
