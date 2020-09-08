@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/search-shopping-cart")
 public class Search_Shopping_Cart {
     
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.GET)
     String home(
 		@RequestParam(value = "guest_session", defaultValue = "") String guest_session,
 		@RequestParam(value = "raw_time_received", defaultValue = "") String raw_time_received,
