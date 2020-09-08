@@ -75,16 +75,17 @@ public class Search_Shopping_Cart {
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_items() + ",";
         return_string += " \"pages\": ";
         return_string += Control_Search_Shopping_Cart_Items.control_calculate_page_number_count() + "}";
-			
-        try {
-            
-            use_open_connection.close();
-        } catch (Exception e) {
-        }			
+						
 		} catch (IOException e) {
 			
 			return_string += "";
 		}
+		
+        try {
+            
+            use_open_connection.close();
+        } catch (Exception e) {
+        }
 		
 		return return_string;
     }
