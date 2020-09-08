@@ -75,8 +75,8 @@ public class Search_Shopping_Cart {
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_all_guest_shopping_cart_items() + ",";*/
         return_string += " \"shopping_cart_items\": ";
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_items() + ",";
-        /*return_string += " \"pages\": ";
-        return_string += Control_Search_Shopping_Cart_Items.control_calculate_page_number_count() + "}";*/
+        return_string += " \"pages\": ";
+        return_string += Control_Search_Shopping_Cart_Items.control_calculate_page_number_count() + "}";
 
         try {
             
