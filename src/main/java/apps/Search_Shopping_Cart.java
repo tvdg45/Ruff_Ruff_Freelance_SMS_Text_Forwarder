@@ -67,12 +67,12 @@ public class Search_Shopping_Cart {
             Control_Search_Shopping_Cart_Items.page_number = "1";
         }
         
-        /*return_string = "{\"shopping_cart_items_count\": ";
+        return_string = "{\"shopping_cart_items_count\": ";
         return_string += "\"" + Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_total_quantity() + "\",";
         return_string += " \"shopping_cart_price_total\": ";
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_total_price() + ",";
         return_string += " \"all_shopping_cart_items\": ";
-        return_string += Control_Search_Shopping_Cart_Items.control_search_for_all_guest_shopping_cart_items() + ",";*/
+        return_string += Control_Search_Shopping_Cart_Items.control_search_for_all_guest_shopping_cart_items() + ",";
         return_string += " \"shopping_cart_items\": ";
         return_string += Control_Search_Shopping_Cart_Items.control_search_for_guest_shopping_cart_items() + ",";
         return_string += " \"pages\": ";
