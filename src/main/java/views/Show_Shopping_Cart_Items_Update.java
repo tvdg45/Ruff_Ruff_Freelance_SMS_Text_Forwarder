@@ -4,11 +4,16 @@ package views;
 import java.util.ArrayList;
 import utilities.Find_and_replace;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Show_Shopping_Cart_Items_Update {
 
     public static int shopping_cart_total_quantity;
     public static ArrayList<String> receipts;
     public static ArrayList<ArrayList<String>> items_sold;
+	
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     public static String add_item_error_message() {
         
@@ -63,6 +68,8 @@ public class Show_Shopping_Cart_Items_Update {
             
             output += "updated - shopping cart empty";
         }
+		
+            LOGGER.log(Level.INFO, "item deletion: " + output);
         
         return output;
     }
