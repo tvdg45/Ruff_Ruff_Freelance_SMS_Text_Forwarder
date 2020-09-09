@@ -22,7 +22,7 @@ public class Delete_From_Cart {
 	@RequestMapping(method = RequestMethod.POST)
     String home(
 		@RequestParam(value = "row_id", defaultValue = "") String row_id,
-		@RequestParam(value = "guest_session", defaultValue = "") String guest_session,
+		@RequestParam(value = "guest_session", defaultValue = "eeb5ac96477dbd3b074c9a2714cad864fed260c18291ff8baafe4f2b1b92fcc5") String guest_session,
 		@RequestParam(value = "delete_from_cart", defaultValue = "") String delete_from_cart
 			   ) {
 		
