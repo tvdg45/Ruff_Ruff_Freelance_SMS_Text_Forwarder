@@ -53,11 +53,13 @@ public class Show_Shopping_Cart_Items_Update {
             
             output += "updated - shopping cart empty";
         }
+		
+		LOGGER.log(Level.INFO, "item deletion: " + output);
         
         return output;
     }
     
-    public static String item_deleted_message() {
+    /*public static String item_deleted_message() {
         
         String output = "";
         
@@ -72,7 +74,7 @@ public class Show_Shopping_Cart_Items_Update {
             LOGGER.log(Level.INFO, "item deletion: " + output);
         
         return output;
-    }
+    }*/
     
     public static String show_receipts() {
         
