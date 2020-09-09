@@ -386,6 +386,8 @@ public class Change_Shopping_Cart_Items {
                 
                 output = shopping_cart_item_count;                
             }
+			
+			LOGGER.log(Level.INFO, "guest session: " + get_guest_session());
         } catch (SQLException e) {
             
             output = 0;
