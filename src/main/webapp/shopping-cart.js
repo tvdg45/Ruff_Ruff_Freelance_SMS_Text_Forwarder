@@ -1200,7 +1200,7 @@ function delete_from_cart_unresponsive() {
         
         xhttp.open("POST", third_party_domain + "/delete-from-cart");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("row_id=" + all_selected_items + "&delete_from_cart=Delete item(s)");
+        xhttp.send("row_id=" + all_selected_items + "&guest_session=" + use_guest_session + "&delete_from_cart=Delete item(s)");
     } else {
         
         all_selected_items = all_selected_items.replace(/{}/g, "");
@@ -1304,7 +1304,7 @@ function delete_from_cart_responsive() {
         
         xhttp.open("POST", third_party_domain + "/delete-from-cart");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("row_id=" + all_selected_items + "&delete_from_cart=Delete item(s)");
+        xhttp.send("row_id=" + all_selected_items + "&guest_session=" + use_guest_session + "&delete_from_cart=Delete item(s)");
     } else {
         
         all_selected_items = all_selected_items.replace(/{}/g, "");
