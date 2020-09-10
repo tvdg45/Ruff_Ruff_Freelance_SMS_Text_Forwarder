@@ -19,35 +19,34 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/delete-from-cart")
 public class Delete_From_Cart {
     
-	@RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "row_id", defaultValue = "") String row_id,
-		@RequestParam(value = "guest_session", defaultValue = "") String guest_session,
-		@RequestParam(value = "delete_from_cart", defaultValue = "") String delete_from_cart
-			   ) {
-		
-		Connection use_open_connection;
-		
-		try {
-			
-		use_open_connection = Config.openConnection();
+            @RequestParam(value = "row_id", defaultValue = "") String row_id,
+            @RequestParam(value = "guest_session", defaultValue = "") String guest_session,
+            @RequestParam(value = "delete_from_cart", defaultValue = "") String delete_from_cart
+    ) {
+        Connection use_open_connection;
         
-		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-		Control_Change_Shopping_Cart_Items.row_id = row_id.split(",");
-		Control_Change_Shopping_Cart_Items.guest_session = guest_session;
-		Control_Change_Shopping_Cart_Items.delete_from_cart = delete_from_cart;
-		
-		if (delete_from_cart.equals("Delete item(s)")) {
-			
-			return Control_Change_Shopping_Cart_Items.control_delete_from_cart();
-		} else {
-			
-			return "";
-		}
-		} catch (IOException e) {
-			
-			return "";
-		}
+        try {
+            
+            use_open_connection = Config.openConnection();
+            
+            Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
+            Control_Change_Shopping_Cart_Items.row_id = row_id.split(",");
+            Control_Change_Shopping_Cart_Items.guest_session = guest_session;
+            Control_Change_Shopping_Cart_Items.delete_from_cart = delete_from_cart;
+            
+            if (delete_from_cart.equals("Delete item(s)")) {
+                
+                return Control_Change_Shopping_Cart_Items.control_delete_from_cart();
+            } else {
+                
+                return "";
+            }
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
