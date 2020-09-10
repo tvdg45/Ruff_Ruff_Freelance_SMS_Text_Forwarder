@@ -24,42 +24,41 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/create-receipt")
 public class Create_Receipt {
     
-	@RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "guest_session", defaultValue = "") String guest_session,
-		@RequestParam(value = "item_id", defaultValue = "") String item_id,
-		@RequestParam(value = "create_receipt", defaultValue = "") String create_receipt
-			   ) {
-		
-		Connection use_open_connection;
-		
-		try {
-			
-		use_open_connection = Config.openConnection();
+            @RequestParam(value = "guest_session", defaultValue = "") String guest_session,
+            @RequestParam(value = "item_id", defaultValue = "") String item_id,
+            @RequestParam(value = "create_receipt", defaultValue = "") String create_receipt
+    ) {
+        Connection use_open_connection;
         
-        DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
-          
-        LocalDate localDate = LocalDate.now();
-        LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
-		
-		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-		Control_Change_Shopping_Cart_Items.guest_session = guest_session;
-		Control_Change_Shopping_Cart_Items.item_id = item_id.split(",");
-		Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
-		Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
-		Control_Change_Shopping_Cart_Items.create_receipt = create_receipt;
-		
-		if (create_receipt.equals("Create receipt")) {
-			
-			return Control_Change_Shopping_Cart_Items.control_create_receipt();
-		} else {
-			
-			return "";
-		}
-		} catch (IOException e) {
-			
-			return "";
-		}
+        try {
+            
+            use_open_connection = Config.openConnection();
+            
+            DateTimeFormatter time_format = DateTimeFormatter.ofPattern("hh:mm a 'EST'");
+            
+            LocalDate localDate = LocalDate.now();
+            LocalTime localTime = LocalTime.now(ZoneId.of("America/New_York"));
+            
+            Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
+            Control_Change_Shopping_Cart_Items.guest_session = guest_session;
+            Control_Change_Shopping_Cart_Items.item_id = item_id.split(",");
+            Control_Change_Shopping_Cart_Items.date_received = String.valueOf(localDate);
+            Control_Change_Shopping_Cart_Items.time_received = String.valueOf(time_format.format(localTime));
+            Control_Change_Shopping_Cart_Items.create_receipt = create_receipt;
+            
+            if (create_receipt.equals("Create receipt")) {
+                
+                return Control_Change_Shopping_Cart_Items.control_create_receipt();
+            } else {
+                
+                return "";
+            }
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
