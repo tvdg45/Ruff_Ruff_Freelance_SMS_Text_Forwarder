@@ -18,26 +18,26 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 @RequestMapping("/admin-extract-receipts")
 public class Admin_Extract_Receipts {
-
-	@RequestMapping(method = RequestMethod.POST)
+    
+    @RequestMapping(method = RequestMethod.POST)
     String home() {
-		
-		Connection use_open_connection;
-		
-		try {
-		
-		use_open_connection = Config.openConnection();
-		
-		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-		
-		return "{\"receipts\": " +
-			Control_Change_Shopping_Cart_Items.control_search_receipts() + "," +
-			" \"items_sold\": " +
-			Control_Change_Shopping_Cart_Items.control_search_items_sold() + "}";
-		} catch (IOException e) {
-			
-			return "";
-		}
+        
+        Connection use_open_connection;
+        
+        try {
+            
+            use_open_connection = Config.openConnection();
+            
+            Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
+            
+            return "{\"receipts\": " +
+                    Control_Change_Shopping_Cart_Items.control_search_receipts() + "," +
+                    " \"items_sold\": " +
+                    Control_Change_Shopping_Cart_Items.control_search_items_sold() + "}";
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
