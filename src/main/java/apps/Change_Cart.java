@@ -5,7 +5,6 @@ import configuration.Config;
 import controllers.Control_Change_Shopping_Cart_Items;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
