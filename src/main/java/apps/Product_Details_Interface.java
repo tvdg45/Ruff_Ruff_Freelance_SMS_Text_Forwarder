@@ -17,34 +17,33 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 @RequestMapping("/product-details-interface")
 public class Product_Details_Interface {
-
-	@RequestMapping(method = RequestMethod.POST)
+    
+    @RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "item_id", defaultValue = "") String item_id
-			   ) {
-		
-		Connection use_open_connection;
-		
-		try {
-		
-		use_open_connection = Config.openConnection();
+            @RequestParam(value = "item_id", defaultValue = "") String item_id
+    ) {
+        Connection use_open_connection;
         
-		Control_Search_For_Sale_Item_Details.use_connection = use_open_connection;
-		Control_Search_For_Sale_Item_Details.item_id = item_id;
-		Control_Search_For_Sale_Item_Details.results_per_page = "10";
-		Control_Search_For_Sale_Item_Details.page_number = "1";
-		Control_Search_For_Sale_Item_Details.sort_by = "Newest";
-		
-        return "{\"sale_product_details\": " +
-			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_details() + "," +
-			" \"sale_product_additional_pictures\": " +
-			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_additional_pictures() + "," +
-			" \"sale_product_reviews\": " +
-			Control_Search_For_Sale_Item_Details.control_search_for_sale_item_reviews() + "}";
-		} catch (IOException e) {
-			
-			return "";
-		}
+        try {
+            
+            use_open_connection = Config.openConnection();
+            
+            Control_Search_For_Sale_Item_Details.use_connection = use_open_connection;
+            Control_Search_For_Sale_Item_Details.item_id = item_id;
+            Control_Search_For_Sale_Item_Details.results_per_page = "10";
+            Control_Search_For_Sale_Item_Details.page_number = "1";
+            Control_Search_For_Sale_Item_Details.sort_by = "Newest";
+            
+            return "{\"sale_product_details\": " +
+                    Control_Search_For_Sale_Item_Details.control_search_for_sale_item_details() + "," +
+                    " \"sale_product_additional_pictures\": " +
+                    Control_Search_For_Sale_Item_Details.control_search_for_sale_item_additional_pictures() + "," +
+                    " \"sale_product_reviews\": " +
+                    Control_Search_For_Sale_Item_Details.control_search_for_sale_item_reviews() + "}";
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
