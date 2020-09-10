@@ -19,32 +19,31 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin-delete-sale-item-pictures")
 public class Admin_Delete_Sale_Item_Pictures {
     
-	@RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "row_id", defaultValue = "") String row_id,
-		@RequestParam(value = "delete_sale_item_pictures", defaultValue = "") String delete_sale_item_pictures
-			   ) {
-		
-		Connection use_open_connection;
-		
-		try {
-		use_open_connection = Config.openConnection();
+            @RequestParam(value = "row_id", defaultValue = "") String row_id,
+            @RequestParam(value = "delete_sale_item_pictures", defaultValue = "") String delete_sale_item_pictures
+    ) {
+        Connection use_open_connection;
         
-		Control_Change_For_Sale_Items.use_connection = use_open_connection;
-		Control_Change_For_Sale_Items.row_id = row_id;
-		Control_Change_For_Sale_Items.delete_sale_item_pictures = delete_sale_item_pictures;
-		
-		if (delete_sale_item_pictures.equals("Delete picture")) {
-			
-			return Control_Change_For_Sale_Items.control_delete_sale_item_pictures();
-		} else {
-			
-			return "";
-		}
-		} catch (IOException e) {
-			
-			return "";
-		}
+        try {
+            use_open_connection = Config.openConnection();
+            
+            Control_Change_For_Sale_Items.use_connection = use_open_connection;
+            Control_Change_For_Sale_Items.row_id = row_id;
+            Control_Change_For_Sale_Items.delete_sale_item_pictures = delete_sale_item_pictures;
+            
+            if (delete_sale_item_pictures.equals("Delete picture")) {
+                
+                return Control_Change_For_Sale_Items.control_delete_sale_item_pictures();
+            } else {
+                
+                return "";
+            }
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
