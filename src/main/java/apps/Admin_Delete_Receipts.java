@@ -18,32 +18,30 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 @RequestMapping("/admin-delete-receipts")
 public class Admin_Delete_Receipts {
-
-	@RequestMapping(method = RequestMethod.POST)
+    
+    @RequestMapping(method = RequestMethod.POST)
     String home(
-		@RequestParam(value = "delete_receipts", defaultValue = "") String delete_receipts
-			   ) {
-		
-		Connection use_open_connection;
-		
-		try {
-		
-		use_open_connection = Config.openConnection();
-		
-		Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
-		Control_Change_Shopping_Cart_Items.delete_receipts = delete_receipts;
-		
-		if (delete_receipts.equals("Delete receipts")) {
-			
-			return Control_Change_Shopping_Cart_Items.control_delete_receipts();
-		} else {
-			
-			return "";
-		}
-		} catch (IOException e) {
-			
-			return "";
-		}
+            @RequestParam(value = "delete_receipts", defaultValue = "") String delete_receipts
+    ) {
+        Connection use_open_connection;
+        
+        try {
+            use_open_connection = Config.openConnection();
+            
+            Control_Change_Shopping_Cart_Items.use_connection = use_open_connection;
+            Control_Change_Shopping_Cart_Items.delete_receipts = delete_receipts;
+            
+            if (delete_receipts.equals("Delete receipts")) {
+                
+                return Control_Change_Shopping_Cart_Items.control_delete_receipts();
+            } else {
+                
+                return "";
+            }
+        } catch (IOException e) {
+            
+            return "";
+        }
     }
 	
     public static void main(String[] args) throws Exception, IOException {
