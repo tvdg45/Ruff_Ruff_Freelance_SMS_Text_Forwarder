@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 @RequestMapping("/")
 public class Directory_Hider {
-
-	@RequestMapping(method = RequestMethod.GET)
+    
+    @RequestMapping(method = RequestMethod.GET)
     String home() {
 		
         return "";
