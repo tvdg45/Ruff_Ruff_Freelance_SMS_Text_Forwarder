@@ -1,15 +1,10 @@
 //Author: Timothy van der Graaff
 package configuration;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.sql.DataSource;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,13 +12,11 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Collections;
 
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 public class Config {
@@ -39,22 +32,22 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-		String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";    
+        String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";    
         String read_line;
-		
-		RestTemplate restTemplate = new RestTemplate();
-		
-		//Create headers
-		HttpHeaders headers = new HttpHeaders();
-		
-		//Request body parameters
-		Map<String, Object> request_parameters = new HashMap<>();
-		
-		//Build the request
-		HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
-		
-		//Send POST request
-		ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
+        
+        RestTemplate restTemplate = new RestTemplate();
+
+        //Create headers
+        HttpHeaders headers = new HttpHeaders();
+
+        //Request body parameters
+        Map<String, Object> request_parameters = new HashMap<>();
+
+        //Build the request
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
+
+        //Send POST request
+        ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
 		
         if (response.getStatusCode() == HttpStatus.OK) {
             
@@ -69,8 +62,8 @@ public class Config {
                     database_password = credentials[2].trim();
                     database_port = credentials[3].trim();
                     database_name = credentials[4].trim();
-					
-					database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
+                    
+                    database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
                 } catch (Exception e) {
                 }
             }
