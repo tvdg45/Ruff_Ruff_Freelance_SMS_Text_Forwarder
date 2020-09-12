@@ -32,8 +32,7 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";    
-        String read_line;
+        String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";
         
         RestTemplate restTemplate = new RestTemplate();
 
