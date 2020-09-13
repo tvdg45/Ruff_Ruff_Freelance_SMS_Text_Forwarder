@@ -21,7 +21,7 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.change_cart_background::-webkit-scrollbar,
+/*.change_cart_background::-webkit-scrollbar,
 .add_to_cart_background::-webkit-scrollbar,
 .create_review_background::-webkit-scrollbar,
 .make_review_public_background::-webkit-scrollbar,
@@ -31,7 +31,7 @@
 .enable_review_deletion_background::-webkit-scrollbar {
     
     display: none;
-}
+}*/
 
 .find:hover,
 .remove_from_cart:hover,
