@@ -30,7 +30,7 @@
 .enable_review_editing_background::-webkit-scrollbar,
 .enable_review_deletion_background::-webkit-scrollbar {
     
-    width: 1px;
+    width: 5px;
 }
 
 .find:hover,
