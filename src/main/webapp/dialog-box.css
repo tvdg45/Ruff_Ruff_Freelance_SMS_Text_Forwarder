@@ -50,7 +50,7 @@
 .close_enable_review_deletion_form:hover { cursor: pointer; }
 
 /* Hide scrollbar for IE and Edge */
-.change_cart_background,
+/*.change_cart_background,
 .add_to_cart_background,
 .create_review_background,
 .make_review_public_background,
@@ -60,7 +60,7 @@
 .enable_review_deletion_background {
     
     -ms-overflow-style: none;
-}
+}*/
 
 @media only screen and (min-width: 2001px) {
     
