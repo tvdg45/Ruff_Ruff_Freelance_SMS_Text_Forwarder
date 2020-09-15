@@ -4,7 +4,6 @@ package apps;
 import configuration.Config;
 import controllers.Control_Search_For_Sale_Item_Details;
 import java.io.IOException;
-//import java.io.PrintWriter;
 
 import java.sql.Connection;
 
@@ -23,6 +22,7 @@ public class Admin_Product_Details_Interface {
     String home(
             @RequestParam(value = "item_id", defaultValue = "") String item_id
     ) {
+		
         Connection use_open_connection;
         
         try {
