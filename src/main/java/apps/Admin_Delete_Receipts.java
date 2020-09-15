@@ -23,6 +23,7 @@ public class Admin_Delete_Receipts {
     String home(
             @RequestParam(value = "delete_receipts", defaultValue = "") String delete_receipts
     ) {
+		
         Connection use_open_connection;
         
         try {
