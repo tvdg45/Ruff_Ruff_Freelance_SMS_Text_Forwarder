@@ -30,6 +30,7 @@ public class Create_Receipt {
             @RequestParam(value = "item_id", defaultValue = "") String item_id,
             @RequestParam(value = "create_receipt", defaultValue = "") String create_receipt
     ) {
+		
         Connection use_open_connection;
         
         try {
