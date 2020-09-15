@@ -22,6 +22,7 @@ public class Product_Details_Interface {
     String home(
             @RequestParam(value = "item_id", defaultValue = "") String item_id
     ) {
+		
         Connection use_open_connection;
         
         try {
