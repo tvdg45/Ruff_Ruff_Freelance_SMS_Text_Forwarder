@@ -27,6 +27,7 @@ public class Enable_Review_Deletion {
             @RequestParam(value = "item_id", defaultValue = "") String item_id,
             @RequestParam(value = "enable_review_deletion", defaultValue = "") String enable_review_deletion
     ) {
+		
         Connection use_open_connection;
         
         try {
