@@ -30,6 +30,7 @@ public class Admin_Add_Sale_Item_Pictures {
             @RequestParam(value = "thumbnail", defaultValue = "") String thumbnail,
             @RequestParam(value = "add_sale_item_pictures", defaultValue = "") String add_sale_item_pictures
     ) {
+		
         Connection use_open_connection;
         
         try {
