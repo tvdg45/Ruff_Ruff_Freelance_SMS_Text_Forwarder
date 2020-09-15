@@ -24,9 +24,11 @@ public class Admin_Delete_Sale_Item_Pictures {
             @RequestParam(value = "row_id", defaultValue = "") String row_id,
             @RequestParam(value = "delete_sale_item_pictures", defaultValue = "") String delete_sale_item_pictures
     ) {
+		
         Connection use_open_connection;
         
         try {
+			
             use_open_connection = Config.openConnection();
             
             Control_Change_For_Sale_Items.use_connection = use_open_connection;
