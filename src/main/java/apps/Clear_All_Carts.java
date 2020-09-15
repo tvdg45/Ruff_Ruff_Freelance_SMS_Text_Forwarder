@@ -24,6 +24,7 @@ public class Clear_All_Carts {
             @RequestParam(value = "raw_time_received", defaultValue = "") String raw_time_received,
             @RequestParam(value = "clear_all_carts", defaultValue = "") String clear_all_carts
     ) {
+		
         Connection use_open_connection;
         
         try {
