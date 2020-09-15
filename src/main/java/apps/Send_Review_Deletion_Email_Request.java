@@ -26,6 +26,7 @@ public class Send_Review_Deletion_Email_Request {
             @RequestParam(value = "item_id", defaultValue = "") String item_id,
             @RequestParam(value = "send_review_deletion_email_request", defaultValue = "") String send_review_deletion_email_request
     ) {
+		
         Connection use_open_connection;
         
         try {
