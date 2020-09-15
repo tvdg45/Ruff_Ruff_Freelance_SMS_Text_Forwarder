@@ -35,6 +35,7 @@ public class Admin_Change_For_Sale_Item_Categories {
             @RequestParam(value = "change_categories", defaultValue = "") String change_categories,
             @RequestParam(value = "delete_categories", defaultValue = "") String delete_categories
     ) {
+		
         Connection use_open_connection;
         
         try {
