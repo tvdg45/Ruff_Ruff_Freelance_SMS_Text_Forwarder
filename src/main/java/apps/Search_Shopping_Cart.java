@@ -32,6 +32,7 @@ public class Search_Shopping_Cart {
             @RequestParam(value = "results_per_page", defaultValue = "") String results_per_page,
             @RequestParam(value = "page_number", defaultValue = "") String page_number
     ) {
+		
         Connection use_open_connection;
         
         String search_guest_session = "";
