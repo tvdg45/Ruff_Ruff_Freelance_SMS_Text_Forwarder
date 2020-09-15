@@ -30,6 +30,7 @@ public class Admin_Change_Item_For_Sale {
             @RequestParam(value = "row_id", defaultValue = "") String row_id,
             @RequestParam(value = "change_item_for_sale", defaultValue = "") String change_item_for_sale
     ) {
+		
         Connection use_open_connection;
         
         try {
