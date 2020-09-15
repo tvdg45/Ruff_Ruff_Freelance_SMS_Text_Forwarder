@@ -25,6 +25,7 @@ public class Delete_From_Cart {
             @RequestParam(value = "guest_session", defaultValue = "") String guest_session,
             @RequestParam(value = "delete_from_cart", defaultValue = "") String delete_from_cart
     ) {
+		
         Connection use_open_connection;
         
         try {
