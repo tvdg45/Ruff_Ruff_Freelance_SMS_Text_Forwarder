@@ -27,6 +27,7 @@ public class Make_Review_Public {
             @RequestParam(value = "item_id", defaultValue = "") String item_id,
             @RequestParam(value = "make_review_public", defaultValue = "") String make_review_public
     ) {
+		
         Connection use_open_connection;
         
         try {
