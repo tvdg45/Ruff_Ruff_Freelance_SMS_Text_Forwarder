@@ -83,8 +83,8 @@ public class Admin_Change_For_Sale_Item_Categories {
                 external_id_exception = "yes";
             }
             
-            Control_Search_Company_Users.date_received = String.valueOf(localDate);
-            Control_Search_Company_Users.time_received = String.valueOf(time_format.format(localTime));
+            Control_Change_For_Sale_Items.date_received = String.valueOf(localDate);
+            Control_Change_For_Sale_Items.time_received = String.valueOf(time_format.format(localTime));
             
             if (add_categories.equals("Add categories") && !(category_exception.equals("yes") || external_id_exception.equals("yes"))) {
                 
