@@ -65,9 +65,9 @@ public class Admin_Change_For_Sale_Item_Categories {
             
             try {
                 
-                String[] category = Find_and_replace.find_and_replace(find, replace, category).split(";");
+                String[] each_category = Find_and_replace.find_and_replace(find, replace, category).split(";");
                 
-                Control_Change_For_Sale_Items.category = category;
+                Control_Change_For_Sale_Items.category = each_category;
             } catch (NullPointerException e) {
                 
                 category_exception = "yes";
@@ -75,9 +75,9 @@ public class Admin_Change_For_Sale_Item_Categories {
             
             try {
                 
-                String[] external_id = Find_and_replace.find_and_replace(find, replace, external_id).split(";");
+                String[] each_external_id = Find_and_replace.find_and_replace(find, replace, external_id).split(";");
                 
-                Control_Change_For_Sale_Items.external_id = external_id;
+                Control_Change_For_Sale_Items.external_id = each_external_id;
             } catch (NullPointerException e) {
                 
                 external_id_exception = "yes";
