@@ -67,7 +67,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         Properties prop = System.getProperties();
         prop.put("mail.smtp.host", SMTP_SERVER); //optional, defined in SMTPTransport
         prop.put("mail.smtp.auth", "false");
-        prop.put("mail.smtp.port", "80"); // default port 25
+        prop.put("mail.smtp.port", "25"); // default port 25
 
         Session session = Session.getInstance(prop, null);
         Message msg = new MimeMessage(session);
