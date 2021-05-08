@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Object[] sources = new Object[28];
+        Object[] sources = new Object[29];
         
         sources[0] = Directory_Hider.class;
         sources[1] = apps.Add_To_Cart.class;
@@ -36,6 +36,7 @@ public class Main {
         sources[25] = apps.Search_Shopping_Cart.class;
         sources[26] = apps.Send_Review_Change_Email_Request.class;
         sources[27] = apps.Send_Review_Deletion_Email_Request.class;
+		sources[28] = apps.Send_Email_To_Vendor.class;
 		
         SpringApplication.run(sources, args);
     }
