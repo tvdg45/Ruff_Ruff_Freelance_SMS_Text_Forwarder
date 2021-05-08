@@ -14,6 +14,9 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+import javax.mail.*;
+
 import javax.mail.Message.RecipientType;
 import javax.mail.Session;
 import javax.mail.Transport;
