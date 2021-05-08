@@ -14,18 +14,18 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-/*import java.util.*;
+import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-import com.sun.mail.smtp.SMTPTransport;*/
+import com.sun.mail.smtp.SMTPTransport;
 
 @RestController
 @EnableAutoConfiguration
 public class Send_Email_To_Vendor extends HttpServlet {
     
     // for example, smtp.mailgun.org
-    /*private static final String SMTP_SERVER = "localhost";
+    private static final String SMTP_SERVER = "localhost";
     private static final String USERNAME = "";
     private static final String PASSWORD = "";
 
@@ -34,7 +34,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
     private static final String EMAIL_TO_CC = "";
 
     private static final String EMAIL_SUBJECT = "Test Send Email via SMTP";
-    private static final String EMAIL_TEXT = "Hello Java Mail \n ABC123";*/
+    private static final String EMAIL_TEXT = "Hello Java Mail \n ABC123";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -64,7 +64,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         
         PrintWriter out = response.getWriter();
         
-        /*Properties prop = System.getProperties();
+        Properties prop = System.getProperties();
         prop.put("mail.smtp.host", SMTP_SERVER); //optional, defined in SMTPTransport
         prop.put("mail.smtp.auth", "false");
         prop.put("mail.smtp.port", "80"); // default port 25
@@ -109,7 +109,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         } catch (MessagingException e) {
             e.printStackTrace();
             out.println(e.getMessage());
-        }*/
+        }
         
       out.println("<br />yes 6");        
     }
