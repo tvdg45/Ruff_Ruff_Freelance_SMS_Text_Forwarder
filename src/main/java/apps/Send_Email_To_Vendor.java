@@ -18,6 +18,8 @@ import java.util.*;
 import javax.mail.*;
 
 import javax.mail.Message.RecipientType;
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -61,9 +63,17 @@ public class Send_Email_To_Vendor extends HttpServlet {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
         props.put("mail.debug", "true");
+		props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
+			
+		Authenticator auth = new Authenticator() {
+			//override the getPasswordAuthentication method
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("timvdg45@gmail.com", "ranger12");
+			}
+		};
         
-        Session session = Session.getDefaultInstance(props);
+        Session session = Session.getDefaultInstance(props, auth);
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress("timvdg45@gmail.com"));
         message.setRecipient(RecipientType.TO, new InternetAddress("timvdg45@gmail.com"));
