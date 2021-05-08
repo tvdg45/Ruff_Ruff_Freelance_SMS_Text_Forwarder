@@ -27,7 +27,7 @@ import com.sun.mail.smtp.SMTPTransport;
 
 @RestController
 @EnableAutoConfiguration
-public class Admin_Change_User_Status extends HttpServlet {
+public class Send_Email_To_Vendor extends HttpServlet {
     
     // for example, smtp.mailgun.org
     private static final String SMTP_SERVER = "localhost";
