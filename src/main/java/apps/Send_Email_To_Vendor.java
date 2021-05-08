@@ -58,8 +58,8 @@ public class Send_Email_To_Vendor extends HttpServlet {
         try {
               
         Properties props = new Properties();
-        props.put("mail.smtp.host", "localhost");
-        props.put("mail.smtp.port", "25");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
         props.put("mail.debug", "true");
         props.put("mail.smtp.starttls.enable", "true");
         
