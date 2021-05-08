@@ -30,7 +30,7 @@ import com.sun.mail.smtp.SMTPTransport;*/
 public class Send_Email_To_Vendor extends HttpServlet {
     
     // for example, smtp.mailgun.org
-    private static final String SMTP_SERVER = "localhost";
+    /*private static final String SMTP_SERVER = "localhost";
     private static final String USERNAME = "";
     private static final String PASSWORD = "";
 
@@ -39,7 +39,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
     private static final String EMAIL_TO_CC = "";
 
     private static final String EMAIL_SUBJECT = "Test Send Email via SMTP";
-    private static final String EMAIL_TEXT = "Hello Java Mail \n ABC123";
+    private static final String EMAIL_TEXT = "Hello Java Mail \n ABC123";*/
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -129,7 +129,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
     */
     
     @Override
-    @PostMapping("/admin-change-user-status")
+    @PostMapping("/send-email-to-vendor")
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         //processRequest(request, response);
