@@ -14,27 +14,15 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
-import com.sun.mail.smtp.SMTPTransport;
+import javax.mail.Message.RecipientType;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 @RestController
 @EnableAutoConfiguration
 public class Send_Email_To_Vendor extends HttpServlet {
-    
-    // for example, smtp.mailgun.org
-    private static final String SMTP_SERVER = "ruff-ruff-instant-chat.herokuapp.com";
-    private static final String USERNAME = "";
-    private static final String PASSWORD = "";
-
-    private static final String EMAIL_FROM = "timvdg45@gmail.com";
-    private static final String EMAIL_TO = "ltrman1996@hotmail.com, timvdg45@gmail.com";
-    private static final String EMAIL_TO_CC = "";
-
-    private static final String EMAIL_SUBJECT = "Test Send Email via SMTP";
-    private static final String EMAIL_TEXT = "Hello Java Mail \n ABC123";
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -63,55 +51,31 @@ public class Send_Email_To_Vendor extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         
         PrintWriter out = response.getWriter();
-        
-        Properties prop = System.getProperties();
-        prop.put("mail.smtp.host", SMTP_SERVER); //optional, defined in SMTPTransport
-        prop.put("mail.smtp.auth", "false");
-        prop.put("mail.smtp.port", "25"); // default port 25
-
-        Session session = Session.getInstance(prop, null);
-        Message msg = new MimeMessage(session);
-
+  
         try {
+              
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "localhost");
+        props.put("mail.smtp.port", "25");
+        props.put("mail.debug", "true");
+        props.put("mail.smtp.starttls.enable", "true");
         
-            // from
-            msg.setFrom(new InternetAddress(EMAIL_FROM));
-
-            // to 
-            msg.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(EMAIL_TO, false));
-
-            // cc
-            msg.setRecipients(Message.RecipientType.CC,
-                    InternetAddress.parse(EMAIL_TO_CC, false));
-
-            // subject
-            msg.setSubject(EMAIL_SUBJECT);
-            
-            // content 
-            msg.setText(EMAIL_TEXT);
-            
-            msg.setSentDate(new Date());
-
-            // Get SMTPTransport
-            SMTPTransport t = (SMTPTransport) session.getTransport("smtp");
-            
-            // connect
-            t.connect(SMTP_SERVER, USERNAME, PASSWORD);
-            
-            // send
-            t.sendMessage(msg, msg.getAllRecipients());
-
-            out.println("Response: " + t.getLastServerResponse());
-
-            t.close();
-
+        Session session = Session.getDefaultInstance(props);
+        MimeMessage message = new MimeMessage(session);
+        message.setFrom(new InternetAddress("timvdg45@gmail.com"));
+        message.setRecipient(RecipientType.TO, new InternetAddress("timvdg45@gmail.com"));
+        message.setSubject("Notification");
+        message.setText("Successful!", "UTF-8"); // as "text/plain"
+        message.setSentDate(new Date());
+        Transport.send(message);
+  
+            out.println("Done");
+  
         } catch (MessagingException e) {
-            e.printStackTrace();
             out.println(e.getMessage());
         }
         
-      out.println("<br />yes 6");        
+      out.println("<br />yes 6");     
     }
     
     /**
