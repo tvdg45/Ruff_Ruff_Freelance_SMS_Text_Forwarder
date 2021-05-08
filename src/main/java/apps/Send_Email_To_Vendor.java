@@ -76,7 +76,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         Session session = Session.getDefaultInstance(props, auth);
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress("timvdg45@gmail.com"));
-        message.setRecipient(RecipientType.TO, new InternetAddress("timvdg45@gmail.com, ltrman1996@hotmail.com"));
+        message.setRecipient(RecipientType.TO, new InternetAddress("ltrman1996@hotmail.com"));
         message.setSubject("Notification");
         message.setText("Successful!", "UTF-8"); // as "text/plain"
         message.setSentDate(new Date());
