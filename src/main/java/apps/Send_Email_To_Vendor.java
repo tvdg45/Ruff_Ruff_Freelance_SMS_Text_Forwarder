@@ -25,7 +25,7 @@ import com.sun.mail.smtp.SMTPTransport;
 public class Send_Email_To_Vendor extends HttpServlet {
     
     // for example, smtp.mailgun.org
-    private static final String SMTP_SERVER = "localhost";
+    private static final String SMTP_SERVER = "ruff-ruff-instant-chat.herokuapp.com";
     private static final String USERNAME = "";
     private static final String PASSWORD = "";
 
