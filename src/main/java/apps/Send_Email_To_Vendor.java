@@ -78,7 +78,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         message.setFrom(new InternetAddress("timvdg45@gmail.com"));
         message.setRecipient(RecipientType.TO, new InternetAddress("ltrman1996@hotmail.com"));
         message.setSubject("Notification");
-        message.setText("Successful!", "UTF-8"); // as "text/plain"
+        message.setContent("<h1>Successful!</h1>", "text/html;charset=UTF-8"); // as "text/plain"
         message.setSentDate(new Date());
         Transport.send(message);
   
