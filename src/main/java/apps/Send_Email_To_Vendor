@@ -4,8 +4,6 @@ package apps;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import java.sql.Connection;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -126,7 +124,6 @@ public class Send_Email_To_Vendor extends HttpServlet {
     */
     
     @Override
-    @PostMapping("/send-email-to-vendor")
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         //processRequest(request, response);
