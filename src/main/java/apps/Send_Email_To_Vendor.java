@@ -64,7 +64,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         props.put("mail.smtp.port", "587");
         props.put("mail.debug", "true");
 		props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+        //props.put("mail.smtp.starttls.enable", "true");
 			
 		Authenticator auth = new Authenticator() {
 			//override the getPasswordAuthentication method
