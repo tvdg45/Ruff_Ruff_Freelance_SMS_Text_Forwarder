@@ -69,13 +69,13 @@ public class Send_Email_To_Vendor extends HttpServlet {
 		Authenticator auth = new Authenticator() {
 			//override the getPasswordAuthentication method
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("ltrman1996@hotmail.com", "ranger12");
+				return new PasswordAuthentication("timothy@timothysdigitalsolutions.com", "ranger12");
 			}
 		};
         
         Session session = Session.getDefaultInstance(props, auth);
         MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("ltrman1996@hotmail.com"));
+        message.setFrom(new InternetAddress("timothy@timothysdigitalsolutions.com"));
         message.setRecipient(RecipientType.TO, new InternetAddress("ltrman1996@hotmail.com"));
         message.setSubject("Notification");
         message.setContent("<h1>Successful!</h1>", "text/html;charset=UTF-8"); // as "text/plain"
