@@ -69,7 +69,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 		Authenticator auth = new Authenticator() {
 			//override the getPasswordAuthentication method
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("ltrman1996@hotmail.com", "Ranger12345!");
+				return new PasswordAuthentication("ltrman1996@hotmail.com", "ranger12");
 			}
 		};
         
