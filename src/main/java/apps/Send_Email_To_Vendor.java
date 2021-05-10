@@ -78,7 +78,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress("timothys@timothysdigitalsolutions.com"));
 		//DestinationPhoneNumber@sms.ipipi.com
-        message.setRecipient(RecipientType.TO, new InternetAddress("2175086775@vtext.com"));
+        message.setRecipient(RecipientType.TO, new InternetAddress("ltrman1996@hotmail.com"));
         message.setSubject("Notification");
         message.setContent("<h1>Successful!</h1>", "text/html;charset=UTF-8"); // as "text/plain"
         message.setSentDate(new Date());
