@@ -28,7 +28,7 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        URL url_for_get_request = new URL("https://ruff-ruff-webhook.herokuapp.com/tds-webhook-email-lookup");
+        URL url_for_get_request = new URL("https://tds-webhook.herokuapp.com/tds-webhook-ruff-ruff");
         
         String read_line;
         
