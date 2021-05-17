@@ -76,6 +76,9 @@ public class Search_Email_Address extends HttpServlet {
         String register_as_customer = String.valueOf(request.getParameter("register_as_customer"));
         String register_as_vendor = String.valueOf(request.getParameter("register_as_vendor"));
         String log_in = String.valueOf(request.getParameter("log_in"));
+		
+		product = "saint-bernard";
+		log_in = "Log in";
   
         Control_Search_Email_Address.use_connection = use_open_connection;
         Control_Search_Email_Address.first_name = first_name;
