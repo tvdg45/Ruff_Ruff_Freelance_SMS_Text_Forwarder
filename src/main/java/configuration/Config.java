@@ -1,7 +1,11 @@
 //Author: Timothy van der Graaff
 package configuration;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,14 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
-
-import org.springframework.web.client.RestTemplate;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
 
 public class Config {
     
@@ -32,35 +28,40 @@ public class Config {
     
     public static void call_database_information() throws IOException {
         
-        String url_for_get_request = "https://tds-webhook.herokuapp.com/tds-webhook-shopping-cart";
+        URL url_for_get_request = new URL("https://ruff-ruff-webhook.herokuapp.com/tds-webhook-email-lookup");
         
-        RestTemplate restTemplate = new RestTemplate();
-
-        //Create headers
-        HttpHeaders headers = new HttpHeaders();
-
-        //Request body parameters
-        Map<String, Object> request_parameters = new HashMap<>();
-
-        //Build the request
-        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request_parameters, headers);
-
-        //Send POST request
-        ResponseEntity<String> response = restTemplate.postForEntity(url_for_get_request, entity, String.class);
-		
-        if (response.getStatusCode() == HttpStatus.OK) {
+        String read_line;
+        
+        HttpURLConnection conection = (HttpURLConnection)url_for_get_request.openConnection();
+        conection.setRequestMethod("POST");
+        
+        int response_code = conection.getResponseCode();
+        
+        if (response_code == HttpURLConnection.HTTP_OK) {
             
-            String[] credentials = response.getBody().toString().split("\\s*,\\s*");
+            StringBuilder response;
+            
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(conection.getInputStream()))) {
+                
+                response = new StringBuilder();
+                
+                while ((read_line = in.readLine()) != null) {
+                    
+                    response.append(read_line);
+                }
+            }
+            
+            String[] credentials = response.toString().split("\\s*,\\s*");
             
             if (credentials.length == 5) {
                 
                 try {
 
-                    database_server = credentials[0].trim();
-                    database_username = credentials[1].trim();
-                    database_password = credentials[2].trim();
-                    database_port = credentials[3].trim();
-                    database_name = credentials[4].trim();
+                    database_server = credentials[0];
+                    database_username = credentials[1];
+                    database_password = credentials[2];
+                    database_port = credentials[3];
+                    database_name = credentials[4];
                     
                     database_url = "jdbc:mysql://" + database_server + ":" + database_port + "/" + database_name;
                 } catch (Exception e) {
@@ -82,7 +83,7 @@ public class Config {
             return connection;
         } catch (ClassNotFoundException | SQLException e) {
             
-            LOGGER.log(Level.INFO, "Unable to connect to database: " + e.getMessage());
+            LOGGER.log(Level.INFO, "Unable to connect to the database");
             
             return null;
         }
@@ -92,10 +93,10 @@ public class Config {
         
         ArrayList<String> output = new ArrayList<> ();
         
-        output.add("timothysdigitalsolutions.com");
-        output.add("http://timothysdigitalsolutions.com");
-        output.add("http://www.timothysdigitalsolutions.com");
-        output.add("https://timothysdigitalsolutions.com");
+        output.add("ruff-ruff.com");
+        output.add("http://ruff-ruff.com");
+        output.add("http://www.ruff-ruff.com");
+        output.add("https://ruff-ruff.com");
         
         return output;
     }
@@ -106,7 +107,7 @@ public class Config {
         
         //Define any domain name below.  Your domain name can also have a directory included.
         //Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
-        String domain = "https://www.timothysdigitalsolutions.com/store";
+        String domain = "https://www.ruff-ruff.com";
         
         output += domain;
         
@@ -121,8 +122,7 @@ public class Config {
         
         //Example: Directory not included - https://www.timothysdigitalsolutions.com or directory included - https://www.timothysdigitalsolutions.com/contact-me
         //String third_party_domain = "https://user-account-management-1.herokuapp.com";
-        //String third_party_domain = "https://time-tracker-java.herokuapp.com";
-        String third_party_domain = "https://shopping-cart-java.herokuapp.com";
+        String third_party_domain = "https://ruff-ruff-1.herokuapp.com";
         
         output += third_party_domain;
         
