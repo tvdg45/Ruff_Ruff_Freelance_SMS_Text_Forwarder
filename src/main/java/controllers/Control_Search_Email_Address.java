@@ -84,7 +84,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
 		
 		session = "tvdg45";
         
-        if (log_in.equals("Log in") && !(Form_Validation.is_string_null_or_white_space(session))) {
+        /*if (log_in.equals("Log in") && !(Form_Validation.is_string_null_or_white_space(session))) {
             
             connection = use_connection;
             
@@ -230,7 +230,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
         } else {
             
             output = "email not sent";
-        }
+        }*/
         
         return output;
     }
