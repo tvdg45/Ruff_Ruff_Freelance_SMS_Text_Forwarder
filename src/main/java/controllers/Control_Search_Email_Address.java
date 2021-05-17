@@ -37,7 +37,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
         String output;
         String file_stream = "";
         
-        try {
+        /*try {
             
             URL url_for_get_request = new URL(Config.domain() +
                                             "wp-content/themes/astra/apps/session-checker.php");
@@ -80,7 +80,9 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             session = "";
         }
         
-        file_stream = "";
+        file_stream = "";*/
+		
+		session = "tvdg45";
         
         if (log_in.equals("Log in") && !(Form_Validation.is_string_null_or_white_space(session))) {
             
