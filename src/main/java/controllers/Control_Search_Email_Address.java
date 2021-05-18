@@ -89,8 +89,10 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             connection = use_connection;
             
             set_product(product);
+			
+			output = "" + connection;
             
-            search_product = search_product();
+            //search_product = search_product();
 			
 			//output = search_product.get(0).get(0);
             
