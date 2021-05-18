@@ -48,9 +48,9 @@ public class Search_Email_Address extends HttpServlet {
 
         PrintWriter out = response.getWriter();
   
-        //Connection use_open_connection;
+        Connection use_open_connection;
   
-        //use_open_connection = configuration.Config.openConnection();
+        use_open_connection = configuration.Config.openConnection();
   
         String first_name = String.valueOf(request.getParameter("first_name"));
         String last_name = String.valueOf(request.getParameter("last_name"));
