@@ -82,7 +82,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
         
         file_stream = "";*/
 		
-		//session = "tvdg45";
+		session = "tvdg45";
         
         if (log_in.equals("Log in") && !(Form_Validation.is_string_null_or_white_space(session))) {
             
@@ -91,8 +91,10 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             set_product(product);
             
             search_product = search_product();
+			
+			output = search_product.get(0).get(0);
             
-            if (!(search_product.get(0).get(0).equals("no product")) && !(search_product.get(0).get(0).equals("fail"))) {
+            /*if (!(search_product.get(0).get(0).equals("no product")) && !(search_product.get(0).get(0).equals("fail"))) {
             
                 set_user_id(search_product.get(0).get(0));
                 
@@ -226,7 +228,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             } else {
                 
                 output = "email not sent";
-            }
+            }*/
         } else {
             
             output = "email not sent";
