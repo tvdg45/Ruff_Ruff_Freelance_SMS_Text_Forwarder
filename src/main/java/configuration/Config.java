@@ -83,7 +83,7 @@ public class Config {
             return connection;
         } catch (ClassNotFoundException | SQLException e) {
             
-            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage() + " " + database_url + " " + database_username + " " + database_password);
+            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage() + " 7 " + database_url + " 6 " + database_username + " 5 " + database_password);
             
             return null;
         }
