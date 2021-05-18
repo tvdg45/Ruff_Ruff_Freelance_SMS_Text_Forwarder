@@ -83,15 +83,10 @@ public class Config {
             return connection;
         } catch (ClassNotFoundException | SQLException e) {
             
-            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage());
+            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage() + " " + database_url + " " + database_username + " " + database_password);
             
             return null;
-        } catch (Exception e) {
-			
-            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage());
-            
-            return null;
-		}
+        }
     }
     
     public static ArrayList<String> bad_domain() {
