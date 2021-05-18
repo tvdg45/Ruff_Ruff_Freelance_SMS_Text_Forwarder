@@ -86,7 +86,12 @@ public class Config {
             LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage());
             
             return null;
-        }
+        } catch (Exception e) {
+			
+            LOGGER.log(Level.INFO, "Unable to connect to the database " + e.getMessage());
+            
+            return null;
+		}
     }
     
     public static ArrayList<String> bad_domain() {
