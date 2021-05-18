@@ -231,6 +231,12 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
                 
                 output = "email not sent";
             }*/
+			
+            try {
+                
+                use_connection.close();
+            } catch (SQLException e) {
+            }
         } else {
             
             output = "email not sent";
