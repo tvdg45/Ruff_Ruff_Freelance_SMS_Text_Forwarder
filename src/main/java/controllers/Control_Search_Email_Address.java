@@ -93,7 +93,6 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             search_product = search_product();
 			
 			//output = search_product.get(0).get(0);
-			output = "" + connection;
             
             /*if (!(search_product.get(0).get(0).equals("no product")) && !(search_product.get(0).get(0).equals("fail"))) {
             
