@@ -91,7 +91,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
             
             set_product(product);
 			
-			output = " ";
+			output = " " + use_connection;
             
             //search_product = search_product();
 			
