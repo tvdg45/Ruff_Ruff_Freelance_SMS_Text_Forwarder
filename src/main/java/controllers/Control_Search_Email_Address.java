@@ -83,7 +83,7 @@ public class Control_Search_Email_Address extends models.Search_Email_Address {
         
         file_stream = "";*/
 		
-		//session = "tvdg45";
+		session = "tvdg45";
         
         if (log_in.equals("Log in") && !(Form_Validation.is_string_null_or_white_space(session))) {
             
