@@ -64,7 +64,7 @@ public class Search_Email_Address extends HttpServlet {
 		product = "saint-bernard";
 		log_in = "Log in";
   
-        //Control_Search_Email_Address.use_connection = use_open_connection;
+        Control_Search_Email_Address.use_connection = use_open_connection;
         Control_Search_Email_Address.first_name = first_name;
         Control_Search_Email_Address.last_name = last_name;
         Control_Search_Email_Address.email = email;
