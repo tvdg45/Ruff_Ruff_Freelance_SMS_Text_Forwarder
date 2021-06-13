@@ -89,6 +89,20 @@ public class Send_Email_To_Vendor extends HttpServlet {
         } catch (MessagingException e) {
             out.println(e.getMessage());
         }
+		
+        message.setFrom(new InternetAddress("timothys@timothysdigitalsolutions.com"));
+		//DestinationPhoneNumber@sms.ipipi.com
+        message.setRecipient(RecipientType.TO, new InternetAddress("2175086775@txt.att.net"));
+        message.setSubject("Notification");
+        message.setContent("<h1>Successful!</h1>", "text/html;charset=UTF-8"); // as "text/plain"
+        message.setSentDate(new Date());
+        Transport.send(message);
+  
+            out.println("Done");
+  
+        } catch (MessagingException e) {
+            out.println(e.getMessage());
+        }
         
       out.println("<br />yes 6");     
     }
