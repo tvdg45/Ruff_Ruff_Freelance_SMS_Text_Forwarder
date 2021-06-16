@@ -4,6 +4,10 @@ package apps;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import java.util.ArrayList;
+
+import utilities.Find_and_replace;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,6 +60,39 @@ public class Send_Email_To_Vendor extends HttpServlet {
         response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         
         PrintWriter out = response.getWriter();
+		
+		if (String.valueOf(request.getParameter("send_text")).equals("Send") {
+			
+			String domain = "";
+			String port = "";
+			String username = "";
+			String password = "";
+			
+			ArrayList<String> find = new ArrayList<>();
+			ArrayList<String> replace = new ArrayList<>();'
+				
+			find.add("(");
+			find.add(")");
+			find.add(", ");
+			
+			replace.add("");
+			replace.add("");
+			replace.add(",");
+			
+			try {
+				
+				String[] each_vendor_text_email = Find_and_replace.find_and_replace(find, replace,
+                    String.valueOf(request.getParameter("vendor_text_email"))).split(",");
+				
+				for (int i = 0; i < each_vendor_text_email.length; i++) {
+					
+					
+				}
+			} catch (NullPointerException e) {
+				
+				out.println("email not sent");
+			}
+		}
   
         try {
               
