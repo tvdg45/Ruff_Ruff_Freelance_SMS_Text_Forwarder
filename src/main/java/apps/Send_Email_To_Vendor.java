@@ -69,7 +69,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			String password = "";
 			
 			ArrayList<String> find = new ArrayList<>();
-			ArrayList<String> replace = new ArrayList<>();'
+			ArrayList<String> replace = new ArrayList<>();
 				
 			find.add("(");
 			find.add(")");
