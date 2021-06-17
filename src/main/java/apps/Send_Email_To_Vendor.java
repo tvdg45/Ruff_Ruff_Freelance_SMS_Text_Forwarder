@@ -67,6 +67,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			String port = "";
 			String username = "";
 			String password = "";
+			String message = "";
 			
 			ArrayList<String> find = new ArrayList<>();
 			ArrayList<String> replace = new ArrayList<>();
@@ -86,7 +87,38 @@ public class Send_Email_To_Vendor extends HttpServlet {
 				
 				for (int i = 0; i < each_vendor_text_email.length; i++) {
 					
-					
+					try {
+						
+						Properties props = new Properties();
+						props.put("mail.smtp.host", "timothysdigitalsolutions.com");
+						props.put("mail.smtp.port", "290");
+						props.put("mail.debug", "true");
+						props.put("mail.smtp.auth", "true");
+						//props.put("mail.smtp.starttls.enable", "true");
+						props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+						
+						Authenticator auth = new Authenticator() {
+							
+							//override the getPasswordAuthentication method
+							protected PasswordAuthentication getPasswordAuthentication() {
+								
+								return new PasswordAuthentication("timothys@timothysdigitalsolutions.com", "Ranger12!");
+							}
+						};
+						
+						Session session = Session.getDefaultInstance(props, auth);
+						MimeMessage message = new MimeMessage(session);
+						message.setFrom(new InternetAddress("timothys@timothysdigitalsolutions.com"));
+						//DestinationPhoneNumber@sms.ipipi.com
+						message.setRecipient(RecipientType.TO, new InternetAddress("2175086775@vtext.com"));
+						message.setSubject("Notification");
+						Transport.send(message);
+						
+						out.println("email sent");
+					} (MessagingException e) {
+						
+						out.println("email not sent");
+					}
 				}
 			} catch (NullPointerException e) {
 				
