@@ -67,7 +67,8 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			String port = "";
 			String username = "";
 			String password = "";
-			String message = "";
+			String subject = "";
+			String message_content = "";
 			
 			ArrayList<String> find = new ArrayList<>();
 			ArrayList<String> replace = new ArrayList<>();
@@ -90,8 +91,8 @@ public class Send_Email_To_Vendor extends HttpServlet {
 					try {
 						
 						Properties props = new Properties();
-						props.put("mail.smtp.host", "timothysdigitalsolutions.com");
-						props.put("mail.smtp.port", "290");
+						props.put("mail.smtp.host", domain);
+						props.put("mail.smtp.port", port);
 						props.put("mail.debug", "true");
 						props.put("mail.smtp.auth", "true");
 						//props.put("mail.smtp.starttls.enable", "true");
@@ -102,16 +103,18 @@ public class Send_Email_To_Vendor extends HttpServlet {
 							//override the getPasswordAuthentication method
 							protected PasswordAuthentication getPasswordAuthentication() {
 								
-								return new PasswordAuthentication("timothys@timothysdigitalsolutions.com", "Ranger12!");
+								return new PasswordAuthentication(username, password);
 							}
 						};
 						
 						Session session = Session.getDefaultInstance(props, auth);
 						MimeMessage message = new MimeMessage(session);
-						message.setFrom(new InternetAddress("timothys@timothysdigitalsolutions.com"));
+						message.setFrom(new InternetAddress(username));
 						//DestinationPhoneNumber@sms.ipipi.com
-						message.setRecipient(RecipientType.TO, new InternetAddress("2175086775@vtext.com"));
+						message.setRecipient(RecipientType.TO, new InternetAddress(each_vendor_text_email[i]));
 						message.setSubject("Notification");
+						message.setContent(message_content, "text/plain;charset=UTF-8"); // as "text/plain"
+						message.setSentDate(new Date());
 						Transport.send(message);
 						
 						out.println("email sent");
