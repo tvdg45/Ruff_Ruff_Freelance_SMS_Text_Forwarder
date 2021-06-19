@@ -62,7 +62,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
         
         PrintWriter out = response.getWriter();
 		
-		if (String.valueOf(request.getParameter("send_text")).equals("Send") {
+		if (String.valueOf(request.getParameter("send_text")).equals("Send")) {
 			
 			String domain = "";
 			String port = "";
@@ -133,7 +133,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			
 			if (!(Form_Validation.is_string_null_or_white_space(vendor_first_name)) && !(Form_Validation.is_string_null_or_white_space(vendor_last_name))) {
 				
-				message_content += "\n\n" + vendor_first_name . " " + vendor_last_name + ", \r\n";
+				message_content += "\n\n" + vendor_first_name + " " + vendor_last_name + ", \r\n";
 			} else {
 				
 				message_content += "\n\n" + vendor_display_name + ", \r\n";
@@ -293,7 +293,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						Transport.send(message);
 						
 						out.println("email sent");
-					} (MessagingException e) {
+					} catch (MessagingException e) {
 						
 						out.println("email not sent");
 					}
