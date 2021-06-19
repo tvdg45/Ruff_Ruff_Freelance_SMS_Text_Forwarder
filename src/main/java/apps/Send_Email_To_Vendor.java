@@ -49,8 +49,23 @@ public class Send_Email_To_Vendor extends HttpServlet {
     */
     
     @Override
-    @GetMapping("/send-email-to-vendor")
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+		//processRequest(request, response);     
+    }
+    
+    /**
+    * Handles the HTTP <code>POST</code> method.
+    *
+    * @param request servlet request
+    * @param response servlet response
+    * @throws ServletException if a servlet-specific error occurs
+    * @throws IOException if an I/O error occurs
+    */
+    
+    @Override
+	@PostMapping("/send-email-to-vendor")
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         processRequest(request, response);
         
@@ -267,7 +282,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						Properties props = new Properties();
 						props.put("mail.smtp.host", domain);
 						props.put("mail.smtp.port", port);
-						props.put("mail.debug", "true");
+						props.put("mail.debug", "false");
 						props.put("mail.smtp.auth", "true");
 						//props.put("mail.smtp.starttls.enable", "true");
 						props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -303,7 +318,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			}
 		}
   
-        try {
+        /*try {
               
         Properties props = new Properties();
         props.put("mail.smtp.host", "timothysdigitalsolutions.com");
@@ -402,22 +417,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
             out.println(e.getMessage());
         }
         
-      out.println("<br />yes 6");     
-    }
-    
-    /**
-    * Handles the HTTP <code>POST</code> method.
-    *
-    * @param request servlet request
-    * @param response servlet response
-    * @throws ServletException if a servlet-specific error occurs
-    * @throws IOException if an I/O error occurs
-    */
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        //processRequest(request, response);
+      out.println("<br />yes 6");*/
     }
     
     /**
