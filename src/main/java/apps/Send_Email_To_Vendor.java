@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import utilities.Find_and_replace;
 import utilities.Form_Validation;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +36,8 @@ import javax.mail.internet.MimeMessage;
 @RestController
 @EnableAutoConfiguration
 public class Send_Email_To_Vendor extends HttpServlet {
+	
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -309,10 +314,14 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						out.println("email sent");
 					} catch (MessagingException e) {
 						
+						LOGGER.log(Level.INFO, e.getMessage());
+						
 						out.println("email not sent");
 					}
 				}
 			} catch (NullPointerException e) {
+				
+				LOGGER.log(Level.INFO, e.getMessage());
 				
 				out.println("email not sent");
 			}
