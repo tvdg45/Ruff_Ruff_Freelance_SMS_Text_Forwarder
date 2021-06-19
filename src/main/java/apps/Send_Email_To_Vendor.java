@@ -283,7 +283,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 				for (int i = 0; i < each_vendor_text_email.length; i++) {
 					
 					LOGGER.log(Level.INFO, "Email: " + each_vendor_text_email[i]);
-					LOGGER.log(Level.INFO, "Port: " + port;
+					LOGGER.log(Level.INFO, "Port: " + port);
 					try {
 						
 						Properties props = new Properties();
