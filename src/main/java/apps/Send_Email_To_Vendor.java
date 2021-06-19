@@ -68,7 +68,51 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			String username = "";
 			String password = "";
 			String subject = "";
+			String post_title = "";
+			String post_content = "";
+			String post_link = "";
+			String vendor_first_name = "";
+			String vendor_last_name = "";
+			String vendor_display_name = "";
+			String customer_name = "";
+			String customer_first_name = "";
+			String customer_last_name = "";
+			String customer_email = "";
+			String customer_billing_phone = "";
+			String customer_billing_address_line_1 = "";
+			String customer_billing_address_line_2 = "";
+			String customer_billing_city = "";
+			String customer_billing_state = "";
+			String customer_billing_country = "";
+			String customer_billing_post_code = "";
+			String customer_biography = "";
+			String personal_message = "";
 			String message_content = "";
+			
+			domain = String.valueOf(request.getParameter("domain"));
+			port = String.valueOf(request.getParameter("port"));
+			username = String.valueOf(request.getParameter("username"));
+			password = String.valueOf(request.getParameter("password"));
+			subject = String.valueOf(request.getParameter("subject"));
+			post_title = String.valueOf(request.getParameter("post_title"));
+			post_content = String.valueOf(request.getParameter("post_content"));
+			post_link = String.valueOf(request.getParameter("post_link"));
+			vendor_first_name = String.valueOf(request.getParameter("vendor_first_name"));
+			vendor_last_name = String.valueOf(request.getParameter("vendor_last_name"));
+			vendor_display_name = String.valueOf(request.getParameter("vendor_display_name"));
+			customer_name = String.valueOf(request.getParameter("customer_name"));
+			customer_first_name = String.valueOf(request.getParameter("customer_first_name"));
+			customer_last_name = String.valueOf(request.getParameter("customer_last_name"));
+			customer_email = String.valueOf(request.getParameter("customer_email"));
+			customer_billing_phone = String.valueOf(request.getParameter("customer_billing_phone"));
+			customer_billing_address_line_1 = String.valueOf(request.getParameter("customer_billing_address_line_1"));
+			customer_billing_address_line_2 = String.valueOf(request.getParameter("customer_billing_address_line_2"));
+			customer_billing_city = String.valueOf(request.getParameter("customer_billing_city"));
+			customer_billing_state = String.valueOf(request.getParameter("customer_billing_state"));
+			customer_billing_country = String.valueOf(request.getParameter("customer_billing_country"));
+			customer_billing_post_code = String.valueOf(request.getParameter("customer_billing_post_code"));
+			customer_biography = String.valueOf(request.getParameter("customer_biography"));
+			personal_message = String.valueOf(request.getParameter("personal_message"));
 			
 			ArrayList<String> find = new ArrayList<>();
 			ArrayList<String> replace = new ArrayList<>();
@@ -112,7 +156,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						message.setFrom(new InternetAddress(username));
 						//DestinationPhoneNumber@sms.ipipi.com
 						message.setRecipient(RecipientType.TO, new InternetAddress(each_vendor_text_email[i]));
-						message.setSubject("Notification");
+						message.setSubject(subject);
 						message.setContent(message_content, "text/plain;charset=UTF-8"); // as "text/plain"
 						message.setSentDate(new Date());
 						Transport.send(message);
