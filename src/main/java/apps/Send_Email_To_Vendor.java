@@ -66,8 +66,6 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			
 			String domain = "";
 			String port = "";
-			String username = "";
-			String password = "";
 			String subject = "";
 			String post_title = "";
 			String post_content = "";
@@ -90,10 +88,11 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			String personal_message = "";
 			String message_content = "";
 			
+			final String username = String.valueOf(request.getParameter("username"));
+			final String password = String.valueOf(request.getParameter("password"));
+			
 			domain = String.valueOf(request.getParameter("domain"));
 			port = String.valueOf(request.getParameter("port"));
-			username = String.valueOf(request.getParameter("username"));
-			password = String.valueOf(request.getParameter("password"));
 			subject = String.valueOf(request.getParameter("subject"));
 			post_title = String.valueOf(request.getParameter("post_title"));
 			post_content = String.valueOf(request.getParameter("post_content"));
