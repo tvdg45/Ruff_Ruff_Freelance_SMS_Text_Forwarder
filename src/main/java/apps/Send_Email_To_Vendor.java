@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import utilities.Find_and_replace;
+import utilities.Form_Validation;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -124,6 +125,136 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			replace.add("");
 			replace.add("");
 			replace.add(",");
+			
+			//Multiple recipients can receive this message, by using the each_vendor_text_email array variable.
+			message_content += "\n\nProduct: " + post_title + "\r\n";
+			message_content += "\n\n" + post_content + "\r\n";
+			message_content += "View your item: " + post_link + "\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(vendor_first_name)) && !(Form_Validation.is_string_null_or_white_space(vendor_last_name))) {
+				
+				message_content += "\n\n" + vendor_first_name . " " + vendor_last_name + ", \r\n";
+			} else {
+				
+				message_content += "\n\n" + vendor_display_name + ", \r\n";
+			}
+			
+			message_content += "the customer's information is listed below.\r\n\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_name))) {
+				
+				message_content += "Name:\r\n";
+				message_content += customer_name + "\r\n";
+			} else {
+				
+				message_content += "First name:\r\n";
+				
+				if (!(Form_Validation.is_string_null_or_white_space(customer_first_name))) {
+					
+					message_content += customer_first_name + "\r\n\n";
+				} else {
+					
+					message_content += "(unknown)\r\n\n";
+				}
+				
+				message_content += "Last name:\r\n";
+				
+				if (!(Form_Validation.is_string_null_or_white_space(customer_last_name))) {
+					
+					message_content += customer_last_name + "\r\n\n";
+				} else {
+					
+					message_content += "(unknown)\r\n\n";
+				}
+			}
+			
+			message_content += "Email:\r\n";
+			message_content += customer_email + "\r\n\n";
+			message_content += "Phone:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_phone))) {
+				
+				message_content += customer_billing_phone + "\r\n\n";
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "Address:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_address_line_1))) {
+				
+				message_content += customer_billing_address_line_1 + "\r\n";
+				
+				if (!(Form_Validation.is_string_null_or_white_space(customer_billing_address_line_2))) {
+					
+					message_content += customer_billing_address_line_2 + "\r\n\n";
+				} else {
+					
+					message_content += "\r\n\n;";
+				}
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "City:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_city))) {
+				
+				message_content += customer_billing_city + "\r\n\n";
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "State:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_state))) {
+				
+				message_content += customer_billing_state + "\r\n\n";
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "Country:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_country))) {
+				
+				message_content += customer_billing_country + "\r\n\n";
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "Zip code:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(custonmer_billing_post_code))) {
+				
+				message_content += customer_billing_post_code + "\r\n\n";
+			} else {
+				
+				message_content += "(unknown)\r\n\n";
+			}
+			
+			message_content += "Biography:\r\n";
+			
+			if (!(Form_Validation.is_string_null_or_white_space(customer_biography))) {
+				
+				message_content += customer_biography + "\r\n\n";
+			} else {
+				
+				message_content += "\r\n\n";
+			}
+			
+			if (!(Form_Validation.is_string_null_or_white_space(personal_message))) {
+				
+				message_content += "Message:\r\n";
+				message_content += personal_message + "\r\n\n";
+			}
+			
+			message_content += "Do not reply to this message.\r\n";
 			
 			try {
 				
