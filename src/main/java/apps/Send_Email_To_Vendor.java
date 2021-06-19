@@ -4,6 +4,9 @@ package apps;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import java.util.ArrayList;
 
 import utilities.Find_and_replace;
@@ -33,6 +36,8 @@ import javax.mail.internet.MimeMessage;
 @RestController
 @EnableAutoConfiguration
 public class Send_Email_To_Vendor extends HttpServlet {
+	
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -277,6 +282,8 @@ public class Send_Email_To_Vendor extends HttpServlet {
 				
 				for (int i = 0; i < each_vendor_text_email.length; i++) {
 					
+					LOGGER.log(Level.INFO, "Email: " + each_vendor_text_email[i]);
+					LOGGER.log(Level.INFO, "Port: " + port;
 					try {
 						
 						Properties props = new Properties();
