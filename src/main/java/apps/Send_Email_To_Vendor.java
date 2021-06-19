@@ -34,8 +34,6 @@ import javax.mail.internet.MimeMessage;
 @EnableAutoConfiguration
 public class Send_Email_To_Vendor extends HttpServlet {
 	
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
