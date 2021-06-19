@@ -230,7 +230,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 			
 			message_content += "Zip code:\r\n";
 			
-			if (!(Form_Validation.is_string_null_or_white_space(custonmer_billing_post_code))) {
+			if (!(Form_Validation.is_string_null_or_white_space(customer_billing_post_code))) {
 				
 				message_content += customer_billing_post_code + "\r\n\n";
 			} else {
