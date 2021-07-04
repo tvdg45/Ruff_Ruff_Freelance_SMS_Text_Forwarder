@@ -311,19 +311,19 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						message.setSentDate(new Date());
 						Transport.send(message);
 						
-						out.println("email sent");
+						out.println("");
 					} catch (MessagingException e) {
 						
 						LOGGER.log(Level.INFO, e.getMessage());
 						
-						out.println("email not sent");
+						out.println("");
 					}
 				}
 			} catch (NullPointerException e) {
 				
 				LOGGER.log(Level.INFO, e.getMessage());
 				
-				out.println("email not sent");
+				out.println("");
 			}
 		}
     }
