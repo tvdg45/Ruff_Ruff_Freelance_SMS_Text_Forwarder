@@ -281,10 +281,6 @@ public class Send_Email_To_Vendor extends HttpServlet {
                     String.valueOf(request.getParameter("vendor_text_email"))).split(",");
 				
 				for (int i = 0; i < each_vendor_text_email.length; i++) {
-				LOGGER.log(Level.INFO, "Address: " + each_vendor_text_email[i]);
-				}
-				
-				for (int i = 0; i < each_vendor_text_email.length; i++) {
 					
 					try {
 						
