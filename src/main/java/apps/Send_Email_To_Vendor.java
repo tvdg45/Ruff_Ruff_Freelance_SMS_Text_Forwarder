@@ -306,6 +306,8 @@ public class Send_Email_To_Vendor extends HttpServlet {
 						message.setFrom(new InternetAddress(username));
 						//DestinationPhoneNumber@sms.ipipi.com
 						message.setRecipient(RecipientType.TO, new InternetAddress(each_vendor_text_email[i]));
+						
+						LOGGER.log(Level.INFO, "Address: " + each_vendor_text_email[i]);
 						message.setSubject(subject);
 						message.setContent(message_content, "text/plain;charset=UTF-8"); // as "text/plain"
 						message.setSentDate(new Date());
