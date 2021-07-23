@@ -264,7 +264,7 @@ public class Send_Email_To_Vendor extends HttpServlet {
 				message_content += customer_biography + "\r\n\n";
 			} else {
 				
-				message_content += "\r\n\n";
+				message_content += "(None)\r\n\n";
 			}
 			
 			if (!(Form_Validation.is_string_null_or_white_space(personal_message))) {
